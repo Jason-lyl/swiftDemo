@@ -47,10 +47,40 @@ class ViewController: UIViewController {
     
     @objc func buttonClick() {
 //        oneKeyView?.starAnimation()
-        let vc = MyTableViewController.init(style: .plain
-        )
-        self.present(vc, animated: true, completion: nil)
+//        let vc = MyTableViewController.init(style: .plain
+//        )
+//        self.present(vc, animated: true, completion: nil)
+        setCollectionView()
     }
+    
+    func setCollectionView() {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 40, left: 30, bottom: 20, right: 30)
+        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.minimumLineSpacing = 30
+        layout.minimumInteritemSpacing = 30
+        let vc = ShadowViewController.init(collectionViewLayout: layout)
+        present(vc, animated: true, completion: nil)
+        print("\(self.view.clipsToBounds)")
+
+    }
+    
+    
+    func setDouble()  {
+
+        let arr: [Double] = [0, 4, 4.01, 4.1111, 4.192, 4.190, 4.198,4.00]
+        
+        for index in 0 ..< arr.count {
+            print(arr[index].probabilityValue)
+        }
+        print("=========")
+        for index in 0 ..< arr.count {
+            print(arr[index].roundTo(places: 2))
+        }
+        
+    }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,5 +90,30 @@ class ViewController: UIViewController {
     
 
 
+}
+
+extension Double {
+    
+    public func roundTo(places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+
+    
+    var probabilityValue: String {
+        //先四舍五入两位
+        let divisor = pow(10.0, Double(2))
+        let value = (self * divisor).rounded() / divisor
+        
+        var str = "\(value)"
+        if str.contains(".") {
+            let arr = str.components(separatedBy: ".")
+            if arr[1] == "0" {
+                str = "\(Int(value))"
+            }
+        }
+        return str
+
+    }
 }
 

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		842DE15F249AF4680068F00D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DE15E249AF4680068F00D /* ProgressView.swift */; };
 		842DE9DF24A98B390068F00D /* OneKeyLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DE9DE24A98B390068F00D /* OneKeyLayerView.swift */; };
+		84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BF924D7E74B00347394 /* ShadowViewController.swift */; };
+		84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */; };
+		84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */; };
 		84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1752499A44A005F4D3D /* AppDelegate.swift */; };
 		84BDF1782499A44A005F4D3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1772499A44A005F4D3D /* SceneDelegate.swift */; };
 		84BDF17A2499A44A005F4D3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1792499A44A005F4D3D /* ViewController.swift */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		842DE15E249AF4680068F00D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		842DE9DE24A98B390068F00D /* OneKeyLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneKeyLayerView.swift; sourceTree = "<group>"; };
+		84432BF924D7E74B00347394 /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
+		84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		84BDF1722499A44A005F4D3D /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BDF1752499A44A005F4D3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BDF1772499A44A005F4D3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 				960CA9E824B74A9500BBF45E /* MyTableViewCell.xib */,
 				960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */,
 				960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */,
+				84432BF924D7E74B00347394 /* ShadowViewController.swift */,
+				84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */,
+				84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 			files = (
 				84BDF1822499A44C005F4D3D /* LaunchScreen.storyboard in Resources */,
 				960CA9EA24B74A9500BBF45E /* MyTableViewCell.xib in Resources */,
+				84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */,
 				960CA9EE24B74B7100BBF45E /* MyHeaderView.xib in Resources */,
 				84BDF17F2499A44C005F4D3D /* Assets.xcassets in Resources */,
 				84BDF17D2499A44A005F4D3D /* Main.storyboard in Resources */,
@@ -285,6 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */,
+				84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */,
 				84BDF17A2499A44A005F4D3D /* ViewController.swift in Sources */,
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
 				960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */,

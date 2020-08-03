@@ -14,7 +14,7 @@ class MyTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 0 ..< 20 {
+        for index in 0 ..< 30 {
             var rowArray = [CellModel]()
             for index1 in 0 ..< 3 {
                 var model = CellModel()
@@ -26,8 +26,9 @@ class MyTableViewController: UITableViewController {
             section.title = "section: \(index)"
             dataSource.append(section)
         }
-        tableView.estimatedRowHeight = 60
-        tableView.estimatedSectionHeaderHeight = 40
+        tableView.estimatedRowHeight = 0
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
         
         tableView.registerCell(MyTableViewCell.self)
         tableView.registerSection(MyHeaderView.self)
@@ -56,24 +57,41 @@ class MyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeReusableCell(indexPath: indexPath) as MyTableViewCell
-        cell.titleLabel.text = dataSource[indexPath.section].dataSource[indexPath.row].title
+        var model =  dataSource[indexPath.section].dataSource[indexPath.row]
+        if model.height == 0 {
+            let hegiht = cell.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
+            model.height = hegiht
+            dataSource[indexPath.section].dataSource[indexPath.row] = model
+        }
+
+        cell.titleLabel.text = model.title
         return cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeReusableHeaderFooter() as MyHeaderView?
-        view?.titleLabel.text = dataSource[section].title
+        var model = dataSource[section]
+        if model.height == 0 {
+            let hegiht = view?.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
+            model.height = hegiht ?? 0
+            dataSource[section] = model
+        }
+        view?.titleLabel.text = model.title
         view?.indexPath = section
         view?.delegate = self
         return view!
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        let model = dataSource[indexPath.section].dataSource[indexPath.row]
+//        return model.height > 0 ? model.height : UITableView.automaticDimension
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableView.automaticDimension
+        let model = dataSource[section]
+//        return model.height > 0 ? model.height : UITableView.automaticDimension
+        return 44.5
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -102,7 +120,7 @@ struct SectionModel {
     var title: String = ""
     var height: CGFloat = 0
     var dataSource: [CellModel] = []
-    var isShow: Bool = true
+    var isShow: Bool = false
 }
 
 
