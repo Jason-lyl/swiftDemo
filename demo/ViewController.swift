@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -43,6 +44,12 @@ class ViewController: UIViewController {
         button.backgroundColor = .red
         self.view.addSubview(button)
         
+        let imageView = UIImageView()
+        imageView.frame = CGRect(x: 250, y: 500, width: 100, height: 100)
+        let url = "https://wx.qlogo.cn/mmopen/vi_32/oJJkuvBb8ZtERMerQUEkVlQdr0Y4eoMG9oQqZkGsYibVrOGSbHTWT9An6jibJY3fwI7MPrpKccWMgA33yQP2qpEg/132"
+        imageView.kf.setImage(with: URL.init(string: url)!)
+        view.addSubview(imageView)
+        
     }
     
     @objc func buttonClick() {
@@ -50,7 +57,12 @@ class ViewController: UIViewController {
 //        let vc = MyTableViewController.init(style: .plain
 //        )
 //        self.present(vc, animated: true, completion: nil)
-        setSliderVC()
+        jumpTimerVC()
+    }
+    
+    func jumpTimerVC() {
+        let vc = TimerTableViewController()
+        present(vc, animated: true, completion: nil)
     }
     
     func setSliderVC() {

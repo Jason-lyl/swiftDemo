@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0507BB109D6952A5D2B56055 /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25254796F95F36D233BF318 /* Pods_demo.framework */; };
 		840E903A24DD4AE600721D3B /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E903824DD4AE600721D3B /* SliderViewController.swift */; };
 		840E903B24DD4AE600721D3B /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E903924DD4AE600721D3B /* SliderViewController.xib */; };
 		842DE15F249AF4680068F00D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DE15E249AF4680068F00D /* ProgressView.swift */; };
@@ -14,6 +15,11 @@
 		84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BF924D7E74B00347394 /* ShadowViewController.swift */; };
 		84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */; };
 		84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */; };
+		8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */; };
+		8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */; };
+		8493E68424E25ECE003A5913 /* TimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */; };
+		8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8493E68724E270AA003A5913 /* OtherTimerTableViewCell.m */; };
+		8493E68A24E270AA003A5913 /* OtherTimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8493E68824E270AA003A5913 /* OtherTimerTableViewCell.xib */; };
 		84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1752499A44A005F4D3D /* AppDelegate.swift */; };
 		84BDF1782499A44A005F4D3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1772499A44A005F4D3D /* SceneDelegate.swift */; };
 		84BDF17A2499A44A005F4D3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1792499A44A005F4D3D /* ViewController.swift */; };
@@ -48,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		674BEC80F3660DD1C015A88F /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		840E903824DD4AE600721D3B /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		840E903924DD4AE600721D3B /* SliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
 		842DE15E249AF4680068F00D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -55,6 +62,13 @@
 		84432BF924D7E74B00347394 /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewController.swift; sourceTree = "<group>"; };
+		8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
+		8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerTableViewCell.xib; sourceTree = "<group>"; };
+		8493E68524E270AA003A5913 /* demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		8493E68624E270AA003A5913 /* OtherTimerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherTimerTableViewCell.h; sourceTree = "<group>"; };
+		8493E68724E270AA003A5913 /* OtherTimerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherTimerTableViewCell.m; sourceTree = "<group>"; };
+		8493E68824E270AA003A5913 /* OtherTimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherTimerTableViewCell.xib; sourceTree = "<group>"; };
 		84BDF1722499A44A005F4D3D /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BDF1752499A44A005F4D3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BDF1772499A44A005F4D3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +89,8 @@
 		960CA9E824B74A9500BBF45E /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeaderView.swift; sourceTree = "<group>"; };
 		960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyHeaderView.xib; sourceTree = "<group>"; };
+		A25254796F95F36D233BF318 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E339390615FA115983543685 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0507BB109D6952A5D2B56055 /* Pods_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +126,9 @@
 				84BDF18B2499A44C005F4D3D /* demoTests */,
 				84BDF1962499A44C005F4D3D /* demoUITests */,
 				84BDF1732499A44A005F4D3D /* Products */,
+				872C9664589FCBF2F0265974 /* Pods */,
+				8F765B4F5B4D9424AD39041B /* Frameworks */,
+				8493E68524E270AA003A5913 /* demo-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +165,12 @@
 				84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */,
 				840E903824DD4AE600721D3B /* SliderViewController.swift */,
 				840E903924DD4AE600721D3B /* SliderViewController.xib */,
+				8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */,
+				8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */,
+				8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */,
+				8493E68624E270AA003A5913 /* OtherTimerTableViewCell.h */,
+				8493E68724E270AA003A5913 /* OtherTimerTableViewCell.m */,
+				8493E68824E270AA003A5913 /* OtherTimerTableViewCell.xib */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -167,6 +193,23 @@
 			path = demoUITests;
 			sourceTree = "<group>";
 		};
+		872C9664589FCBF2F0265974 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				674BEC80F3660DD1C015A88F /* Pods-demo.debug.xcconfig */,
+				E339390615FA115983543685 /* Pods-demo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F765B4F5B4D9424AD39041B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A25254796F95F36D233BF318 /* Pods_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84BDF19C2499A44C005F4D3D /* Build configuration list for PBXNativeTarget "demo" */;
 			buildPhases = (
+				E9ACAE025C01794D5E966766 /* [CP] Check Pods Manifest.lock */,
 				84BDF16E2499A44A005F4D3D /* Sources */,
 				84BDF16F2499A44A005F4D3D /* Frameworks */,
 				84BDF1702499A44A005F4D3D /* Resources */,
+				8BDD53064F128ADCA8C76F7F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +280,7 @@
 				TargetAttributes = {
 					84BDF1712499A44A005F4D3D = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1160;
 					};
 					84BDF1872499A44C005F4D3D = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -274,6 +320,8 @@
 				84BDF1822499A44C005F4D3D /* LaunchScreen.storyboard in Resources */,
 				960CA9EA24B74A9500BBF45E /* MyTableViewCell.xib in Resources */,
 				84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */,
+				8493E68A24E270AA003A5913 /* OtherTimerTableViewCell.xib in Resources */,
+				8493E68424E25ECE003A5913 /* TimerTableViewCell.xib in Resources */,
 				960CA9EE24B74B7100BBF45E /* MyHeaderView.xib in Resources */,
 				84BDF17F2499A44C005F4D3D /* Assets.xcassets in Resources */,
 				840E903B24DD4AE600721D3B /* SliderViewController.xib in Resources */,
@@ -297,6 +345,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8BDD53064F128ADCA8C76F7F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9ACAE025C01794D5E966766 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84BDF16E2499A44A005F4D3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -310,8 +400,11 @@
 				960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */,
 				84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */,
 				842DE15F249AF4680068F00D /* ProgressView.swift in Sources */,
+				8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */,
+				8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */,
 				842DE9DF24A98B390068F00D /* OneKeyLayerView.swift in Sources */,
 				84BDF1782499A44A005F4D3D /* SceneDelegate.swift in Sources */,
+				8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */,
 				960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */,
 				84BDF1A62499A4FB005F4D3D /* ProbabilityHalfCircleView.swift in Sources */,
 			);
@@ -484,8 +577,10 @@
 		};
 		84BDF19D2499A44C005F4D3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 674BEC80F3660DD1C015A88F /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WJZGTR69T;
 				INFOPLIST_FILE = demo/Info.plist;
@@ -495,6 +590,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = youzy.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -502,8 +599,10 @@
 		};
 		84BDF19E2499A44C005F4D3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E339390615FA115983543685 /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WJZGTR69T;
 				INFOPLIST_FILE = demo/Info.plist;
@@ -513,6 +612,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = youzy.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
