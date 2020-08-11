@@ -14,7 +14,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.clipsToBounds = false
+        self.layer.masksToBounds = false
         // Initialization code
     }
     

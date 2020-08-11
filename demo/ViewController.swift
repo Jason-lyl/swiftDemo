@@ -50,7 +50,13 @@ class ViewController: UIViewController {
 //        let vc = MyTableViewController.init(style: .plain
 //        )
 //        self.present(vc, animated: true, completion: nil)
-        setCollectionView()
+        setSliderVC()
+    }
+    
+    func setSliderVC() {
+        let vc = SliderViewController()
+        present(vc, animated: true, completion: nil)
+
     }
     
     func setCollectionView() {
