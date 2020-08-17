@@ -12,6 +12,10 @@
 		840E903B24DD4AE600721D3B /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E903924DD4AE600721D3B /* SliderViewController.xib */; };
 		842DE15F249AF4680068F00D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DE15E249AF4680068F00D /* ProgressView.swift */; };
 		842DE9DF24A98B390068F00D /* OneKeyLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DE9DE24A98B390068F00D /* OneKeyLayerView.swift */; };
+		8435A06E24EA66A400CA8047 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435A06D24EA66A400CA8047 /* NavigationController.swift */; };
+		8435A07024EA66CF00CA8047 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435A06F24EA66CF00CA8047 /* TabBarViewController.swift */; };
+		8435A07424EA688A00CA8047 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435A07324EA688A00CA8047 /* HomeViewController.swift */; };
+		8435A07724EA68B200CA8047 /* SwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435A07624EA68B200CA8047 /* SwiftUIViewController.swift */; };
 		84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BF924D7E74B00347394 /* ShadowViewController.swift */; };
 		84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */; };
 		84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */; };
@@ -21,11 +25,7 @@
 		8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8493E68724E270AA003A5913 /* OtherTimerTableViewCell.m */; };
 		8493E68A24E270AA003A5913 /* OtherTimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8493E68824E270AA003A5913 /* OtherTimerTableViewCell.xib */; };
 		84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1752499A44A005F4D3D /* AppDelegate.swift */; };
-		84BDF1782499A44A005F4D3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1772499A44A005F4D3D /* SceneDelegate.swift */; };
-		84BDF17A2499A44A005F4D3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1792499A44A005F4D3D /* ViewController.swift */; };
-		84BDF17D2499A44A005F4D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BDF17B2499A44A005F4D3D /* Main.storyboard */; };
 		84BDF17F2499A44C005F4D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BDF17E2499A44C005F4D3D /* Assets.xcassets */; };
-		84BDF1822499A44C005F4D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BDF1802499A44C005F4D3D /* LaunchScreen.storyboard */; };
 		84BDF18D2499A44C005F4D3D /* demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF18C2499A44C005F4D3D /* demoTests.swift */; };
 		84BDF1982499A44C005F4D3D /* demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1972499A44C005F4D3D /* demoUITests.swift */; };
 		84BDF1A62499A4FB005F4D3D /* ProbabilityHalfCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1A52499A4FB005F4D3D /* ProbabilityHalfCircleView.swift */; };
@@ -59,6 +59,10 @@
 		840E903924DD4AE600721D3B /* SliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
 		842DE15E249AF4680068F00D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		842DE9DE24A98B390068F00D /* OneKeyLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneKeyLayerView.swift; sourceTree = "<group>"; };
+		8435A06D24EA66A400CA8047 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		8435A06F24EA66CF00CA8047 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8435A07324EA688A00CA8047 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8435A07624EA68B200CA8047 /* SwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewController.swift; sourceTree = "<group>"; };
 		84432BF924D7E74B00347394 /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -71,11 +75,7 @@
 		8493E68824E270AA003A5913 /* OtherTimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherTimerTableViewCell.xib; sourceTree = "<group>"; };
 		84BDF1722499A44A005F4D3D /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BDF1752499A44A005F4D3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84BDF1772499A44A005F4D3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84BDF1792499A44A005F4D3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84BDF17C2499A44A005F4D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84BDF17E2499A44C005F4D3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84BDF1812499A44C005F4D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84BDF1832499A44C005F4D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84BDF1882499A44C005F4D3D /* demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BDF18C2499A44C005F4D3D /* demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoTests.swift; sourceTree = "<group>"; };
@@ -119,6 +119,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84359FC824EA556800CA8047 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				84BDF1A52499A4FB005F4D3D /* ProbabilityHalfCircleView.swift */,
+				842DE9DE24A98B390068F00D /* OneKeyLayerView.swift */,
+				842DE15E249AF4680068F00D /* ProgressView.swift */,
+				960CA9E524B74A3300BBF45E /* MyTableViewController.swift */,
+				960CA9E724B74A9500BBF45E /* MyTableViewCell.swift */,
+				960CA9E824B74A9500BBF45E /* MyTableViewCell.xib */,
+				960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */,
+				960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */,
+				84432BF924D7E74B00347394 /* ShadowViewController.swift */,
+				84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */,
+				84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */,
+				840E903824DD4AE600721D3B /* SliderViewController.swift */,
+				840E903924DD4AE600721D3B /* SliderViewController.xib */,
+				8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */,
+				8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */,
+				8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */,
+				8493E68624E270AA003A5913 /* OtherTimerTableViewCell.h */,
+				8493E68724E270AA003A5913 /* OtherTimerTableViewCell.m */,
+				8493E68824E270AA003A5913 /* OtherTimerTableViewCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		8435A06C24EA667400CA8047 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				8435A06D24EA66A400CA8047 /* NavigationController.swift */,
+				8435A06F24EA66CF00CA8047 /* TabBarViewController.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		8435A07124EA686100CA8047 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8435A07524EA688F00CA8047 /* swiftUI */,
+				8435A07224EA687400CA8047 /* home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8435A07224EA687400CA8047 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				8435A07324EA688A00CA8047 /* HomeViewController.swift */,
+				84359FC824EA556800CA8047 /* views */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		8435A07524EA688F00CA8047 /* swiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				8435A07624EA68B200CA8047 /* SwiftUIViewController.swift */,
+			);
+			path = swiftUI;
+			sourceTree = "<group>";
+		};
 		84BDF1692499A44A005F4D3D = {
 			isa = PBXGroup;
 			children = (
@@ -145,32 +206,11 @@
 		84BDF1742499A44A005F4D3D /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				8435A07124EA686100CA8047 /* Controllers */,
+				8435A06C24EA667400CA8047 /* base */,
 				84BDF1752499A44A005F4D3D /* AppDelegate.swift */,
-				84BDF1772499A44A005F4D3D /* SceneDelegate.swift */,
-				84BDF1A52499A4FB005F4D3D /* ProbabilityHalfCircleView.swift */,
-				84BDF1792499A44A005F4D3D /* ViewController.swift */,
-				842DE9DE24A98B390068F00D /* OneKeyLayerView.swift */,
-				84BDF17B2499A44A005F4D3D /* Main.storyboard */,
 				84BDF17E2499A44C005F4D3D /* Assets.xcassets */,
-				84BDF1802499A44C005F4D3D /* LaunchScreen.storyboard */,
 				84BDF1832499A44C005F4D3D /* Info.plist */,
-				842DE15E249AF4680068F00D /* ProgressView.swift */,
-				960CA9E524B74A3300BBF45E /* MyTableViewController.swift */,
-				960CA9E724B74A9500BBF45E /* MyTableViewCell.swift */,
-				960CA9E824B74A9500BBF45E /* MyTableViewCell.xib */,
-				960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */,
-				960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */,
-				84432BF924D7E74B00347394 /* ShadowViewController.swift */,
-				84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */,
-				84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */,
-				840E903824DD4AE600721D3B /* SliderViewController.swift */,
-				840E903924DD4AE600721D3B /* SliderViewController.xib */,
-				8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */,
-				8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */,
-				8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */,
-				8493E68624E270AA003A5913 /* OtherTimerTableViewCell.h */,
-				8493E68724E270AA003A5913 /* OtherTimerTableViewCell.m */,
-				8493E68824E270AA003A5913 /* OtherTimerTableViewCell.xib */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -317,7 +357,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BDF1822499A44C005F4D3D /* LaunchScreen.storyboard in Resources */,
 				960CA9EA24B74A9500BBF45E /* MyTableViewCell.xib in Resources */,
 				84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */,
 				8493E68A24E270AA003A5913 /* OtherTimerTableViewCell.xib in Resources */,
@@ -325,7 +364,6 @@
 				960CA9EE24B74B7100BBF45E /* MyHeaderView.xib in Resources */,
 				84BDF17F2499A44C005F4D3D /* Assets.xcassets in Resources */,
 				840E903B24DD4AE600721D3B /* SliderViewController.xib in Resources */,
-				84BDF17D2499A44A005F4D3D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,18 +430,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8435A07024EA66CF00CA8047 /* TabBarViewController.swift in Sources */,
 				84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */,
 				84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */,
-				84BDF17A2499A44A005F4D3D /* ViewController.swift in Sources */,
+				8435A07424EA688A00CA8047 /* HomeViewController.swift in Sources */,
 				840E903A24DD4AE600721D3B /* SliderViewController.swift in Sources */,
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
 				960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */,
 				84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */,
+				8435A06E24EA66A400CA8047 /* NavigationController.swift in Sources */,
 				842DE15F249AF4680068F00D /* ProgressView.swift in Sources */,
 				8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */,
+				8435A07724EA68B200CA8047 /* SwiftUIViewController.swift in Sources */,
 				8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */,
 				842DE9DF24A98B390068F00D /* OneKeyLayerView.swift in Sources */,
-				84BDF1782499A44A005F4D3D /* SceneDelegate.swift in Sources */,
 				8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */,
 				960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */,
 				84BDF1A62499A4FB005F4D3D /* ProbabilityHalfCircleView.swift in Sources */,
@@ -440,25 +480,6 @@
 			targetProxy = 84BDF1942499A44C005F4D3D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		84BDF17B2499A44A005F4D3D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84BDF17C2499A44A005F4D3D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		84BDF1802499A44C005F4D3D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84BDF1812499A44C005F4D3D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		84BDF19A2499A44C005F4D3D /* Debug */ = {
@@ -580,6 +601,7 @@
 			baseConfigurationReference = 674BEC80F3660DD1C015A88F /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WJZGTR69T;
@@ -602,6 +624,7 @@
 			baseConfigurationReference = E339390615FA115983543685 /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WJZGTR69T;

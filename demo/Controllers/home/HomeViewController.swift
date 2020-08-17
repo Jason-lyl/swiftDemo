@@ -1,21 +1,23 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  demo
 //
-//  Created by Jason on 2020/6/17.
+//  Created by Jason on 2020/8/17.
 //  Copyright © 2020 youzy. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class ViewController: UIViewController {
+
+class HomeViewController: UIViewController {
     
     var oneKeyView: OneKeyLayerView?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.red
         navigationItem.title = "demo"
         // Do any additional setup after loading the view.
         setUpViews1()
@@ -53,10 +55,10 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonClick() {
-//        oneKeyView?.starAnimation()
-//        let vc = MyTableViewController.init(style: .plain
-//        )
-//        self.present(vc, animated: true, completion: nil)
+        //        oneKeyView?.starAnimation()
+        //        let vc = MyTableViewController.init(style: .plain
+        //        )
+        //        self.present(vc, animated: true, completion: nil)
         jumpTimerVC()
     }
     
@@ -68,7 +70,7 @@ class ViewController: UIViewController {
     func setSliderVC() {
         let vc = SliderViewController()
         present(vc, animated: true, completion: nil)
-
+        
     }
     
     func setCollectionView() {
@@ -81,12 +83,12 @@ class ViewController: UIViewController {
         let vc = ShadowViewController.init(collectionViewLayout: layout)
         present(vc, animated: true, completion: nil)
         print("\(self.view.clipsToBounds)")
-
+        
     }
     
     
     func setDouble()  {
-
+        
         let arr: [Double] = [0, 4, 4.01, 4.1111, 4.192, 4.190, 4.198,4.00]
         
         for index in 0 ..< arr.count {
@@ -106,8 +108,8 @@ class ViewController: UIViewController {
     }
     
     
-
-
+    
+    
 }
 
 extension Double {
@@ -116,7 +118,7 @@ extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
-
+    
     
     var probabilityValue: String {
         //先四舍五入两位
@@ -131,7 +133,7 @@ extension Double {
             }
         }
         return str
-
+        
     }
 }
 
