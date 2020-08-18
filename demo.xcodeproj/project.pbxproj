@@ -36,6 +36,8 @@
 		8435A0A324EBACFB00CA8047 /* silversalmoncreek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8435A09624EBACFB00CA8047 /* silversalmoncreek.jpg */; };
 		8435A0A424EBACFB00CA8047 /* lakemcdonald.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8435A09724EBACFB00CA8047 /* lakemcdonald.jpg */; };
 		8435A0A624EBADF900CA8047 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435A0A524EBADF900CA8047 /* Data.swift */; };
+		8435A0A824EBCF6B00CA8047 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435A0A724EBCF6B00CA8047 /* LandmarkList.swift */; };
+		8435A0AA24EBD25F00CA8047 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435A0A924EBD25F00CA8047 /* LandmarkDetail.swift */; };
 		84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BF924D7E74B00347394 /* ShadowViewController.swift */; };
 		84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */; };
 		84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */; };
@@ -103,6 +105,8 @@
 		8435A09624EBACFB00CA8047 /* silversalmoncreek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silversalmoncreek.jpg; sourceTree = "<group>"; };
 		8435A09724EBACFB00CA8047 /* lakemcdonald.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lakemcdonald.jpg; sourceTree = "<group>"; };
 		8435A0A524EBADF900CA8047 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8435A0A724EBCF6B00CA8047 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
+		8435A0A924EBD25F00CA8047 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		84432BF924D7E74B00347394 /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				8435A07D24EA850D00CA8047 /* CircleImage.swift */,
 				8435A07F24EA8AFB00CA8047 /* MapView.swift */,
 				8435A08124EB793200CA8047 /* ContentView.swift */,
+				8435A0A724EBCF6B00CA8047 /* LandmarkList.swift */,
+				8435A0A924EBD25F00CA8047 /* LandmarkDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -546,6 +552,8 @@
 				8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */,
 				8435A08624EB9E7B00CA8047 /* Landmark.swift in Sources */,
 				8435A07724EA68B200CA8047 /* SwiftUIViewController.swift in Sources */,
+				8435A0A824EBCF6B00CA8047 /* LandmarkList.swift in Sources */,
+				8435A0AA24EBD25F00CA8047 /* LandmarkDetail.swift in Sources */,
 				8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */,
 				842DE9DF24A98B390068F00D /* OneKeyLayerView.swift in Sources */,
 				8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */,
