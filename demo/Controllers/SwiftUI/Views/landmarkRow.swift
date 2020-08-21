@@ -27,6 +27,11 @@ struct landmarkRow: View {
                 .frame(width: 50, height: 50)
             Text(landmark.name)
             Spacer()
+            if landmark.isFavorite {
+                Image(systemName: "start.fill").imageScale(.medium)
+                    .foregroundColor(.yellow)
+            }
+
         }
         
     }
