@@ -22,11 +22,14 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let navigationVC = NavigationController()
         let navhome = navigationVC.navigationControllerWithRootViewController(Vc: home, title: "home")
         
+        let other = OtherViewController()
+        let navOther = navigationVC.navigationControllerWithRootViewController(Vc: other, title: "other")
+        
         
         let ui = SwiftUIViewController()
         let navmy = navigationVC.navigationControllerWithRootViewController(Vc: ui, title: "swiftUI")
         // 添加到tabbarVc中
-        self.viewControllers = [navhome, navmy]
+        self.viewControllers = [navhome, navOther, navmy]
         
         //设置默认选中为第一个
         self.tabBarController?.selectedIndex = 0

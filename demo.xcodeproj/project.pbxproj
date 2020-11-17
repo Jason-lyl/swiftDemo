@@ -41,6 +41,9 @@
 		84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BF924D7E74B00347394 /* ShadowViewController.swift */; };
 		84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */; };
 		84432BFE24D7EE4800347394 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */; };
+		84620C3B2563713F00695261 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620C3A2563713F00695261 /* OtherViewController.swift */; };
+		84620C44256371FC00695261 /* RecommandCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620C43256371FC00695261 /* RecommandCircleView.swift */; };
+		84620C492563966900695261 /* HeaderCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620C482563966900695261 /* HeaderCircleView.swift */; };
 		8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */; };
 		8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */; };
 		8493E68424E25ECE003A5913 /* TimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */; };
@@ -110,6 +113,9 @@
 		84432BF924D7E74B00347394 /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		84432BFB24D7EE4800347394 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		84432BFC24D7EE4800347394 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		84620C3A2563713F00695261 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		84620C43256371FC00695261 /* RecommandCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCircleView.swift; sourceTree = "<group>"; };
+		84620C482563966900695261 /* HeaderCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCircleView.swift; sourceTree = "<group>"; };
 		8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewController.swift; sourceTree = "<group>"; };
 		8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerTableViewCell.xib; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 			children = (
 				8435A07524EA688F00CA8047 /* SwiftUI */,
 				8435A07224EA687400CA8047 /* Home */,
+				84620C3F256371CA00695261 /* Other */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +274,16 @@
 				8435A08B24EBACFA00CA8047 /* yukon_charleyrivers.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		84620C3F256371CA00695261 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				84620C3A2563713F00695261 /* OtherViewController.swift */,
+				84620C43256371FC00695261 /* RecommandCircleView.swift */,
+				84620C482563966900695261 /* HeaderCircleView.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		84BDF1692499A44A005F4D3D = {
@@ -543,6 +560,7 @@
 				8435A0A624EBADF900CA8047 /* Data.swift in Sources */,
 				8435A08024EA8AFB00CA8047 /* MapView.swift in Sources */,
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
+				84620C3B2563713F00695261 /* OtherViewController.swift in Sources */,
 				960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */,
 				8435A07E24EA850D00CA8047 /* CircleImage.swift in Sources */,
 				84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */,
@@ -551,6 +569,7 @@
 				842DE15F249AF4680068F00D /* ProgressView.swift in Sources */,
 				8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */,
 				8435A08624EB9E7B00CA8047 /* Landmark.swift in Sources */,
+				84620C44256371FC00695261 /* RecommandCircleView.swift in Sources */,
 				8435A07724EA68B200CA8047 /* SwiftUIViewController.swift in Sources */,
 				8435A0A824EBCF6B00CA8047 /* LandmarkList.swift in Sources */,
 				8435A0AA24EBD25F00CA8047 /* LandmarkDetail.swift in Sources */,
@@ -559,6 +578,7 @@
 				8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */,
 				960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */,
 				84BDF1A62499A4FB005F4D3D /* ProbabilityHalfCircleView.swift in Sources */,
+				84620C492563966900695261 /* HeaderCircleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
