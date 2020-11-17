@@ -19,8 +19,13 @@ class OtherViewController: UIViewController {
         view.addCircleWithProgress(0.7)
         self.view.addSubview(view)
         
-        let view1 = HeaderCircleView.init(frame: CGRect(x: 0, y: 300, width: with, height: with))
-        view.addSubview(view1)
+        let view2 = RecommandHeaderCircleView.init(frame: CGRect(x: 0, y: 400, width: with, height: with))
+        view2.addCircleWithProgress()
+        self.view.addSubview(view2)
+        
+        
+//        let view1 = HeaderCircleView.init(frame: CGRect(x: 0, y: 300, width: with, height: with))
+//        view.addSubview(view1)
         // Do any additional setup after loading the view.
     }
     

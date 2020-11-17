@@ -11,7 +11,7 @@ import UIKit
 class RecommandCircleView: UIView {
 
 
-    let lineWidth: CGFloat = 15
+    let lineWidth: CGFloat = 20
     var circlePath = UIBezierPath()
 
     override init(frame: CGRect) {
@@ -41,8 +41,8 @@ class RecommandCircleView: UIView {
         layer.addSublayer(bgLayer)
         
         addOtherLayer(startProgress: 0, endProgress: 0.3)
-        addOtherLayer(startProgress: 0.35, endProgress: 0.5)
-        addOtherLayer(startProgress: 0.55, endProgress: 0.95)
+        addOtherLayer(startProgress: 0.35, endProgress: 0.8)
+        addOtherLayer(startProgress: 0.85, endProgress: 0.95)
 
 
 
