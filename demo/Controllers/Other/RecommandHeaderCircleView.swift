@@ -86,62 +86,77 @@ class RecommandHeaderCircleView: UIView {
         
         let bezierPath = UIBezierPath(arcCenter: centerPoint, radius: middleRadius + 10, startAngle: item.startAngle, endAngle: item.endAngle, clockwise: true)
         
-//        let shapeLayer = CAShapeLayer()
-//        shapeLayer.frame = self.bounds
-//        shapeLayer.fillColor = UIColor.clear.cgColor
-//        shapeLayer.lineWidth = lineWidth
-//        shapeLayer.lineCap = .round
-//        shapeLayer.strokeColor = #colorLiteral(red: 1, green: 0.4588235294, blue: 0.4509803922, alpha: 1).cgColor
-//        shapeLayer.strokeStart = 0
-//        shapeLayer.strokeEnd = 1
-//        shapeLayer.path = bezierPath.cgPath
-//        layer.addSublayer(shapeLayer)
-        bezierPath.lineWidth = lineWidth
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.frame = self.bounds
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = lineWidth
+        shapeLayer.lineCap = .butt
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.strokeStart = 0
+        shapeLayer.strokeEnd = 1
+        shapeLayer.path = bezierPath.cgPath
+        layer.addSublayer(shapeLayer)
+        
+        
+        //渐变色
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = shapeLayer.bounds
         switch item.type {
         case .bao:
-            #colorLiteral(red: 0.5568627451, green: 0.8666666667, blue: 0.3568627451, alpha: 1).setStroke()
+            gradientLayer.colors = [#colorLiteral(red: 0.8493084311, green: 0.8589627147, blue: 0.4409173727, alpha: 1).cgColor, #colorLiteral(red: 0.5568627451, green: 0.8666666667, blue: 0.3568627451, alpha: 1).cgColor]
         case .chong:
-            #colorLiteral(red: 0.9137254902, green: 0.1882352941, blue: 0.1764705882, alpha: 1).setStroke()
+            gradientLayer.colors = [#colorLiteral(red: 0.8871927261, green: 0.5590420961, blue: 0.2408269644, alpha: 1).cgColor, #colorLiteral(red: 0.9137254902, green: 0.1882352941, blue: 0.1764705882, alpha: 1).cgColor]
         case .wen:
-            #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1).setStroke()
+            gradientLayer.colors = [#colorLiteral(red: 0.9711312652, green: 0.9297972322, blue: 0, alpha: 1).cgColor, #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1).cgColor]
         }
-        bezierPath.stroke()
-        
 
-
-
-
+        gradientLayer.locations = [NSNumber(value: 0), NSNumber(value: 1)]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.mask = shapeLayer
+        gradientLayer.frame = bounds
+        layer.addSublayer(gradientLayer)
+        
+        // 动画
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        animation.duration = 0.8
+        animation.fromValue = 0
+        animation.toValue = 2 * CGFloat.pi
+        animation.repeatCount = Float.greatestFiniteMagnitude
+        shapeLayer.add(animation, forKey: nil)
         
         
-        
-        
-
-        
-//        let smallShapeLayer = CAShapeLayer()
-//        smallShapeLayer.frame = self.bounds
-//        smallShapeLayer.fillColor = UIColor.clear.cgColor
-//        smallShapeLayer.lineWidth = lineWidth
-//        smallShapeLayer.lineCap = .round
-//        smallShapeLayer.strokeColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1).cgColor
-//        smallShapeLayer.strokeStart = 0
-//        smallShapeLayer.strokeEnd = 1
-//        smallShapeLayer.path = smallBezierPath.cgPath
-//        layer.addSublayer(smallShapeLayer)
-        
-        
-
+//        bezierPath.lineWidth = lineWidth
+//        switch item.type {
+//        case .bao:
+//            #colorLiteral(red: 0.5568627451, green: 0.8666666667, blue: 0.3568627451, alpha: 1).setStroke()
+//        case .chong:
+//            #colorLiteral(red: 0.9137254902, green: 0.1882352941, blue: 0.1764705882, alpha: 1).setStroke()
+//        case .wen:
+//            #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1).setStroke()
+//        }
+//        bezierPath.stroke()
+    
+    
     }
     
     func drawLayer2(_ item: HeaderCircle) {
         let centerPoint = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
-
-        let smallCenter = CGPoint(x: centerPoint.x + (middleRadius + 13) * cos(item.startAngle + CGFloat.pi / 25), y: centerPoint.y + (middleRadius +  13) * sin(item.startAngle + CGFloat.pi / 25))
         
-        let startCenter = CGPoint(x: centerPoint.x + (middleRadius - 10) * cos(item.startAngle - CGFloat.pi / 15), y: centerPoint.y + (middleRadius - 10) * sin(item.startAngle - CGFloat.pi / 15))
-        let endCenter = CGPoint(x: centerPoint.x + (bigRadius + 10) * cos(item.startAngle - CGFloat.pi / 15), y: centerPoint.y + (bigRadius + 10) * sin(item.startAngle - CGFloat.pi / 15))
+        let pointAngle = item.startAngle + CGFloat.pi / 20
+        let pointR = middleRadius + 16
+        let smallCenter = CGPoint(x: centerPoint.x + pointR * cos(pointAngle), y: centerPoint.y + pointR * sin(pointAngle))
+        
+        let startAngle = item.startAngle - CGFloat.pi / 25
+        let startR = middleRadius - 10
+        let startCenter = CGPoint(x: centerPoint.x + startR * cos(startAngle), y: centerPoint.y + startR * sin(startAngle))
+        
+        let endAngle = item.startAngle - CGFloat.pi / 25
+        let endR = bigRadius + 10
+        let endCenter = CGPoint(x: centerPoint.x + endR * cos(endAngle), y: centerPoint.y + endR * sin(endAngle))
         
         #warning("测试")
-
+//
 //        let smallView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 10)))
 //        smallView.center = smallCenter
 //        smallView.layer.cornerRadius = 5
@@ -161,14 +176,28 @@ class RecommandHeaderCircleView: UIView {
 //        smallView2.backgroundColor = UIColor.green
 //        self.addSubview(smallView2)
         
+        
+        
         let smallBezierPath = UIBezierPath()
         smallBezierPath.move(to: startCenter)
         smallBezierPath.addQuadCurve(to: endCenter, controlPoint: smallCenter)
-        smallBezierPath.lineWidth = 5
-//        UIColor.white.setFill()
-        UIColor.white.setStroke()
-        smallBezierPath.stroke()
-//        smallBezierPath.fill()
+        smallBezierPath.lineWidth = 4
+        
+        
+        let smallShapeLayer = CAShapeLayer()
+        smallShapeLayer.frame = self.bounds
+        smallShapeLayer.fillColor = UIColor.clear.cgColor
+        smallShapeLayer.lineWidth = 4
+        smallShapeLayer.lineCap = .round
+        smallShapeLayer.strokeColor = UIColor.white.cgColor
+        smallShapeLayer.strokeStart = 0
+        smallShapeLayer.strokeEnd = 1
+        smallShapeLayer.path = smallBezierPath.cgPath
+        layer.addSublayer(smallShapeLayer)
+        
+        
+//        UIColor.white.setStroke()
+//        smallBezierPath.stroke()
 
     }
 }
