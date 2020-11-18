@@ -60,6 +60,7 @@
 		960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */; };
 		960CA9EE24B74B7100BBF45E /* MyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */; };
 		96B02A15256409B60061331E /* RecommandHeaderCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */; };
+		96B02B032565535E0061331E /* ContextChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02B022565535E0061331E /* ContextChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeaderView.swift; sourceTree = "<group>"; };
 		960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyHeaderView.xib; sourceTree = "<group>"; };
 		96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandHeaderCircleView.swift; sourceTree = "<group>"; };
+		96B02B022565535E0061331E /* ContextChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextChartView.swift; sourceTree = "<group>"; };
 		A25254796F95F36D233BF318 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E339390615FA115983543685 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +287,7 @@
 				84620C43256371FC00695261 /* RecommandCircleView.swift */,
 				84620C482563966900695261 /* HeaderCircleView.swift */,
 				96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */,
+				96B02B022565535E0061331E /* ContextChartView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				8435A0A624EBADF900CA8047 /* Data.swift in Sources */,
 				8435A08024EA8AFB00CA8047 /* MapView.swift in Sources */,
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
+				96B02B032565535E0061331E /* ContextChartView.swift in Sources */,
 				84620C3B2563713F00695261 /* OtherViewController.swift in Sources */,
 				960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */,
 				8435A07E24EA850D00CA8047 /* CircleImage.swift in Sources */,

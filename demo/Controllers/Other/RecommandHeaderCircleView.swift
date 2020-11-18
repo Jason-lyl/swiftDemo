@@ -122,7 +122,8 @@ class RecommandHeaderCircleView: UIView {
         animation.duration = 0.8
         animation.fromValue = 0
         animation.toValue = 2 * CGFloat.pi
-        animation.repeatCount = Float.greatestFiniteMagnitude
+        animation.repeatCount = 10
+//        animation.repeatCount = Float.greatestFiniteMagnitude
         shapeLayer.add(animation, forKey: nil)
         
         
