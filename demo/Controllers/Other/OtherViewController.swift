@@ -20,7 +20,7 @@ class OtherViewController: UIViewController {
         self.view.addSubview(view)
         
         let view2 = RecommandHeaderCircleView.init(frame: CGRect(x: 0, y: 400, width: with, height: with))
-        view2.addCircleWithProgress()
+//        view2.addCircleWithProgress()
         self.view.addSubview(view2)
         
         
