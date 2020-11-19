@@ -204,20 +204,3 @@ class RecommandHeaderCircleView: UIView {
 }
 
 
-
-
-struct HeaderCircle {
-    // 开始弧度
-    var startAngle: CGFloat = 0
-    // 结束弧度
-    var endAngle: CGFloat = 0
-    /// 先从bao开始画图
-    var type: RecoommandType = .bao
-}
-
-enum RecoommandType {
-    case chong
-    case wen
-    case bao
-}
-

@@ -26,6 +26,7 @@ class ContextChartView: UIView {
     /// 中心点圆心
     private var centerPoint = CGPoint.zero
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initDataSource()
@@ -53,14 +54,24 @@ class ContextChartView: UIView {
                 model.startAngle =  CGFloat.pi / 20
                 model.endAngle = item * CGFloat.pi * 2 + CGFloat.pi / 20
                 model.type = .bao
+                model.color = #colorLiteral(red: 0.5568627451, green: 0.8666666667, blue: 0.3568627451, alpha: 1)
+                model.count = 27
+                model.title = "可保底"
             case 1:
                 model.startAngle = dataArray[0] * CGFloat.pi * 2 + CGFloat.pi / 20
                 model.endAngle = (dataArray[0] + item) * CGFloat.pi * 2 + CGFloat.pi / 20
                 model.type = .chong
+                model.color = #colorLiteral(red: 0.9137254902, green: 0.1882352941, blue: 0.1764705882, alpha: 1)
+                model.title = "需冲刺"
+                model.count = 85
+                
             case 2:
                 model.startAngle = (dataArray[0] + dataArray[1]) * CGFloat.pi * 2 + CGFloat.pi / 20
                 model.endAngle = CGFloat.pi * 2 + CGFloat.pi / 20
                 model.type = .wen
+                model.color = #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1)
+                model.count = 32
+                model.title = "较稳妥"
             default:
                 break
             }
@@ -74,11 +85,18 @@ class ContextChartView: UIView {
 extension ContextChartView {
     
     override func draw(_ rect: CGRect) {
-        superview?.draw(rect)
         guard let context = UIGraphicsGetCurrentContext() else { return }
        
         for item in dataSource {
             drawLayer(item, context: context)
+
+        }
+        
+        
+        if dataSource.count > 0 {
+            drawLayer1(dataSource[0], context: context)
+            drawLayer1(dataSource[1], context: context)
+            drawLayer1(dataSource[2], context: context)
 
         }
         
@@ -87,22 +105,13 @@ extension ContextChartView {
 
         }
         
-        
-        context.translateBy(x: centerPoint.x, y: centerPoint.y)
-
-        if dataSource.count > 0 {
-            drawLayer1(dataSource[0], context: context)
-            drawLayer1(dataSource[1], context: context)
-            drawLayer1(dataSource[2], context: context)
-
-        }
-        
 
     }
     
     func drawLayer1(_ item: HeaderCircle, context: CGContext) {
         
-        context.beginPath()
+        context.translateBy(x: centerPoint.x, y: centerPoint.y)
+
         //重置圆点 设置圆心
         context.saveGState()
         context.rotate(by: item.endAngle - CGFloat.pi / 20)
@@ -127,6 +136,9 @@ extension ContextChartView {
         context.drawPath(using: .stroke)
         context.restoreGState()
         
+        context.translateBy(x: -centerPoint.x, y: -centerPoint.y)
+
+        
     }
     
     
@@ -134,8 +146,6 @@ extension ContextChartView {
         
         
         context.beginPath()
-        context.translateBy(x: 0, y: 0)
-    
 
         context.addArc(center: centerPoint, radius: middleRadius + lineWidth / 2, startAngle: item.startAngle, endAngle: item.endAngle, clockwise: false)
 
@@ -153,25 +163,31 @@ extension ContextChartView {
         
         
         
-        /// 绘制文字
+        // 绘制文字
         let pointAngle = item.startAngle + (item.endAngle - item.startAngle) / 2
-        let pointR = middleRadius + lineWidth / 2
-        let textCenter = CGPoint(x: centerPoint.x + pointR * cos(pointAngle), y: centerPoint.y + pointR * sin(pointAngle))
+        let pointRdius = middleRadius + lineWidth / 2
+        let textCenter = CGPoint(x: centerPoint.x + pointRdius * cos(pointAngle), y: centerPoint.y + pointRdius * sin(pointAngle))
+//        let roatedAngle = CGFloat.pi * 2 - (item.endAngle - item.startAngle) / 2
+        let roatedAngle = CGFloat.pi + (item.endAngle - item.startAngle) / 2 - item.endAngle / 2
+
+        context.translateBy(x: textCenter.x, y: textCenter.y)
+        context.saveGState()
+        context.rotate(by: roatedAngle)
+        let string = item.title as NSString
+        let style = NSMutableParagraphStyle.init()
+        style.alignment = .center
         
-//        context.saveGState()
-//        context.translateBy(x: textCenter.x, y: textCenter.y)
-        let roatedAngle = CGFloat.pi - (item.endAngle - item.startAngle) / 2
-//        context.rotate(by: roatedAngle)
-   
-        let string = "需冲刺" as NSString
+        let attributedArr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.paragraphStyle: style]
+        let width = string.boundingRect(with: CGSize(width: 200, height: 15), options: .usesLineFragmentOrigin, attributes: attributedArr, context: nil).size.width
+//        let rect = CGRect(x: textCenter.x - (width / 2), y: textCenter.y - 8, width: width, height: 15)
+        let rect = CGRect(x: -(width / 2), y: -8, width: width, height: 15)
+
         
-        let attributedArr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.gray]
-        string.draw(at: textCenter, withAttributes: attributedArr)
-        let view = UIView.init(frame: CGRect(origin: .zero, size: CGSize(width: 4, height: 4)))
-        view.center = textCenter
-        view.backgroundColor = UIColor.brown
-        self.addSubview(view)
-//        context.restoreGState()
+        string.draw(in: rect, withAttributes: attributedArr)
+        context.restoreGState()
+        
+        context.translateBy(x: -textCenter.x, y: -textCenter.y)
+
     
 
 
@@ -199,8 +215,7 @@ extension ContextChartView {
     func drawLineChart(_ item: HeaderCircle, context: CGContext) {
         
         context.beginPath()
-        context.translateBy(x: 0, y: 0)
-        
+        context.resetClip()
         let centerAngle = item.startAngle + (item.endAngle - item.startAngle) / 2
         let area = getLocationArea(centerAngle)
         
@@ -257,4 +272,27 @@ enum EngineHeaderArea {
     // 右下
     case bottomRight
     
+}
+
+
+/// 引擎头部数据模型
+struct HeaderCircle {
+    // 开始弧度
+    var startAngle: CGFloat = 0
+    // 结束弧度
+    var endAngle: CGFloat = 0
+    // 先从bao开始画图
+    var type: RecoommandType = .bao
+    //标题
+    var title: String = ""
+    //数量
+    var count: Int = 0
+    // 颜色
+    var color: UIColor = .white
+}
+
+enum RecoommandType {
+    case chong
+    case wen
+    case bao
 }
