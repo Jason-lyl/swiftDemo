@@ -15,10 +15,10 @@ class OtherViewController: UIViewController {
         self.view.backgroundColor = .white
         let with = self.view.frame.width
         
-        let view = ContextChartView.init(frame: CGRect(x: 0, y: 0, width: with, height: with))
+        let view = ContextChartView.init(frame: CGRect(x: 0, y: 100, width: with, height: with))
         self.view.addSubview(view)
         
-        let view2 = RecommandHeaderCircleView.init(frame: CGRect(x: 0, y: 400, width: with, height: with))
+        let view2 = RecommandHeaderCircleView.init(frame: CGRect(x: 0, y: 500, width: with, height: with))
 //        view2.addCircleWithProgress()
         self.view.addSubview(view2)
         

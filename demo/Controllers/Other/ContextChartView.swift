@@ -14,6 +14,9 @@ class ContextChartView: UIView {
     var dataSource: [HeaderCircle] = []
     
     private let leftEdge: CGFloat = 100
+    
+    ///扩展长度
+    private let extentLine: CGFloat = 6
 
     /// 间隔
     private let lineWidth: CGFloat = 24
@@ -55,7 +58,7 @@ class ContextChartView: UIView {
                 model.endAngle = item * CGFloat.pi * 2 + CGFloat.pi / 20
                 model.type = .bao
                 model.color = #colorLiteral(red: 0.5568627451, green: 0.8666666667, blue: 0.3568627451, alpha: 1)
-                model.count = 27
+                model.count = 32
                 model.title = "可保底"
             case 1:
                 model.startAngle = dataArray[0] * CGFloat.pi * 2 + CGFloat.pi / 20
@@ -70,7 +73,7 @@ class ContextChartView: UIView {
                 model.endAngle = CGFloat.pi * 2 + CGFloat.pi / 20
                 model.type = .wen
                 model.color = #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1)
-                model.count = 32
+                model.count = 27
                 model.title = "较稳妥"
             default:
                 break
@@ -100,11 +103,13 @@ extension ContextChartView {
 
         }
         
-        if dataSource.count > 0 {
-            drawLineChart(dataSource[1], context: context)
+        
+        for item in dataSource {
+            drawLineChart(item, context: context)
 
         }
         
+        drawTotalCountTitle()
 
     }
     
@@ -168,8 +173,10 @@ extension ContextChartView {
         let pointRdius = middleRadius + lineWidth / 2
         let textCenter = CGPoint(x: centerPoint.x + pointRdius * cos(pointAngle), y: centerPoint.y + pointRdius * sin(pointAngle))
 //        let roatedAngle = CGFloat.pi * 2 - (item.endAngle - item.startAngle) / 2
-        let roatedAngle = CGFloat.pi + (item.endAngle - item.startAngle) / 2 - item.endAngle / 2
-
+//        let roatedAngle = CGFloat.pi + (item.endAngle - item.startAngle) / 2 - item.endAngle / 2
+        let roatedAngle = getRotateAngle(item)
+    
+ 
         context.translateBy(x: textCenter.x, y: textCenter.y)
         context.saveGState()
         context.rotate(by: roatedAngle)
@@ -178,9 +185,9 @@ extension ContextChartView {
         style.alignment = .center
         
         let attributedArr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.paragraphStyle: style]
-        let width = string.boundingRect(with: CGSize(width: 200, height: 15), options: .usesLineFragmentOrigin, attributes: attributedArr, context: nil).size.width
+        let width = string.boundingRect(with: CGSize(width: 200, height: 14), options: .usesLineFragmentOrigin, attributes: attributedArr, context: nil).size.width
 //        let rect = CGRect(x: textCenter.x - (width / 2), y: textCenter.y - 8, width: width, height: 15)
-        let rect = CGRect(x: -(width / 2), y: -8, width: width, height: 15)
+        let rect = CGRect(x: -(width / 2), y: -7, width: width, height: 14)
 
         
         string.draw(in: rect, withAttributes: attributedArr)
@@ -211,35 +218,138 @@ extension ContextChartView {
     
     }
     
+    
+    /// 获取文字旋转弧度
+    /// - Parameter item: 参数模型
+    /// - Returns: 弧度
+    func getRotateAngle(_ item: HeaderCircle) -> CGFloat {
+        
+        // 终点弧度所在区域
+        let endArea = getLocationArea(item.endAngle)
+        // 中线所在区域
+        let centerArea = getLocationArea(item.startAngle + (item.endAngle - item.startAngle) / 2)
+        
+        var ratateAngle: CGFloat = 0
+        if endArea == .bottomRight && endArea == .bottomRight {
+            ratateAngle = CGFloat.pi - (item.startAngle + item.endAngle) / 2
+        } else if endArea == .bottomLeft && centerArea == .bottomRight {
+            ratateAngle = (item.endAngle - item.startAngle + CGFloat.pi) / 2
+        } else if endArea == .topLeft && centerArea == .topLeft {
+            ratateAngle = CGFloat.pi * 2 - 3 * item.endAngle / 2 + item.startAngle / 2
+        } else if endArea == .topRight && centerArea == .topLeft {
+            ratateAngle = (item.endAngle + item.startAngle) / 2 - CGFloat.pi / 2
+        } else {
+            ratateAngle = (item.endAngle + item.startAngle) / 2 - 3 * CGFloat.pi / 2
+        }
+        return ratateAngle
+
+        
+        
+    }
+    
+}
+
+// MARK: - 绘画折线图和描述
+extension ContextChartView {
     /// 绘画折线图和描述
     func drawLineChart(_ item: HeaderCircle, context: CGContext) {
         
         context.beginPath()
         context.resetClip()
         let centerAngle = item.startAngle + (item.endAngle - item.startAngle) / 2
+        let pointRadius = bigRadius + 5
+        let startPoint = CGPoint(x: centerPoint.x + pointRadius * cos(centerAngle), y: centerPoint.y + pointRadius * sin(centerAngle))
+
+        var middlePoint = CGPoint.zero
+        var endPoint = CGPoint.zero
+        
+        
         let area = getLocationArea(centerAngle)
         
-        let pointRadius = bigRadius + 5
+        switch area {
+        case .topLeft:
+            middlePoint = CGPoint(x: startPoint.x - lineWidth, y: startPoint.y - lineWidth)
+            endPoint = CGPoint(x: middlePoint.x - lineWidth * 2 - extentLine, y: middlePoint.y)
+        case .bottomLeft:
+            middlePoint = CGPoint(x: startPoint.x - lineWidth, y: startPoint.y + lineWidth)
+            endPoint = CGPoint(x: middlePoint.x - lineWidth * 2 - extentLine, y: middlePoint.y)
+        case . topRight:
+            middlePoint = CGPoint(x: startPoint.x + lineWidth, y: startPoint.y - lineWidth)
+            endPoint = CGPoint(x: middlePoint.x + lineWidth * 2 + extentLine, y: middlePoint.y)
+        case .bottomRight:
+            middlePoint = CGPoint(x: startPoint.x + lineWidth, y: startPoint.y + lineWidth)
+            endPoint = CGPoint(x: middlePoint.x + lineWidth * 2 + extentLine, y: middlePoint.y)
+        }
         
-        let startPoint = CGPoint(x: centerPoint.x + pointRadius * cos(centerAngle), y: centerPoint.y + pointRadius * sin(centerAngle))
-        let middlePoint = CGPoint(x: startPoint.x - lineWidth, y: startPoint.y - lineWidth)
-        let endPoint = CGPoint(x: middlePoint.x - lineWidth - lineWidth, y: middlePoint.y)
         
         context.move(to: startPoint)
         context.addLine(to: middlePoint)
         context.addLine(to: endPoint)
         context.setLineWidth(1)
         context.setLineDash(phase: 0, lengths: [1, 1])
-        context.setStrokeColor(UIColor.red.cgColor)
+        context.setStrokeColor(item.color.cgColor)
         context.drawPath(using: .stroke)
         
-            
+        // title
+        let string = item.title as NSString
+        let style = NSMutableParagraphStyle.init()
+        style.alignment = .center
         
+        let attributedArr: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1),
+            NSAttributedString.Key.paragraphStyle: style
+        ]
+        let width = string.boundingRect(with: CGSize(width: 200, height: 14), options: .usesLineFragmentOrigin, attributes: attributedArr, context: nil).size.width
+        
+        var titlePoint = CGPoint.zero
+        
+        // 数量
+        let countAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 22),
+            NSAttributedString.Key.foregroundColor: item.color
+        ]
+        
+        let suoAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1),
+        ]
+        let countAttributedString = NSMutableAttributedString.init(string: "\(item.count) 所", attributes: countAttributes)
+        let range: NSRange = (countAttributedString.string as NSString).range(of: " 所")
+        countAttributedString.addAttributes(suoAttributes, range: range)
+        
+        let countWith = countAttributedString.boundingRect(with: CGSize(width: 200, height: 24), options: .usesLineFragmentOrigin, context: nil).size.width
+
+        
+        var countPoint = CGPoint.zero
+        
+        switch area {
+        case .topLeft:
+            titlePoint = CGPoint(x: middlePoint.x - width - 10, y: middlePoint.y - 20)
+            countPoint = CGPoint(x: middlePoint.x - countWith - 5, y: titlePoint.y - 26)
+        case .topRight:
+            titlePoint = CGPoint(x: middlePoint.x + 10, y: middlePoint.y - 20)
+            countPoint = CGPoint(x: middlePoint.x + 10, y: titlePoint.y - 26)
+        case .bottomLeft:
+            titlePoint = CGPoint(x: middlePoint.x - width - 10, y: middlePoint.y - 20)
+            countPoint = CGPoint(x: middlePoint.x - countWith - 5, y: titlePoint.y - 26)
+
+        case .bottomRight:
+            titlePoint = CGPoint(x: middlePoint.x + 10, y: middlePoint.y - 20)
+            countPoint = CGPoint(x: middlePoint.x + 10, y: titlePoint.y - 26)
+
+        }
+                
+        let rect = CGRect(origin: titlePoint, size: CGSize(width: width, height: 14))
+        string.draw(in: rect, withAttributes: attributedArr)
+        
+        let countRect = CGRect(origin: countPoint, size: CGSize(width: countWith, height: 24))
+        countAttributedString.draw(in: countRect)
+        
+
         
     }
     
-    
-        
     /// 获取折线图画图区域
     /// - Parameter angle: 当前弧度中心点度数
     /// - Returns: 所处区域
@@ -255,6 +365,44 @@ extension ContextChartView {
             return .topRight
         }
         
+    }
+
+}
+
+// MARK: - 画总共院校内容
+extension ContextChartView {
+    
+    func drawTotalCountTitle() {
+        
+        let total = dataSource.map({$0.count}).reduce(0, +)
+        
+        let totalAttributeds: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 40),
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ]
+        
+        let suoAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1),
+        ]
+        
+        // 总数量
+        let totalAttributedString = NSMutableAttributedString.init(string: "\(total) 所", attributes: totalAttributeds)
+        let range: NSRange = (totalAttributedString.string as NSString).range(of: " 所")
+        totalAttributedString.addAttributes(suoAttributes, range: range)
+        
+        let totalSize = totalAttributedString.boundingRect(with: CGSize(width: 200, height: 35), options: .usesLineFragmentOrigin, context: nil).size
+        let totalPoint = CGPoint(x: centerPoint.x - totalSize.width / 2, y: centerPoint.y - totalSize.height / 2 - 10)
+        totalAttributedString.draw(in: CGRect(origin: totalPoint, size: totalSize))
+        
+        //描述
+        let describAttributedString = NSMutableAttributedString.init(string: "适合我的大学", attributes: suoAttributes)
+        
+        let describSize = describAttributedString.boundingRect(with: CGSize(width: 200, height: 14), options: .usesLineFragmentOrigin, context: nil).size
+        let describPoint = CGPoint(x: centerPoint.x - describSize.width / 2, y: centerPoint.y + totalSize.height / 2 - 10)
+        describAttributedString.draw(in: CGRect(origin: describPoint, size: describSize))
+        
+
     }
     
     
