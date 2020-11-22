@@ -58,8 +58,8 @@ class ContextChartView: UIView {
             var model = HeaderCircle()
             switch index {
             case 0:
-                model.startAngle =  CGFloat.pi / 20
-                model.endAngle = item * CGFloat.pi * 2 + CGFloat.pi / 20
+                model.startAngle = 0
+                model.endAngle = item * CGFloat.pi * 2
                 model.type = .bao
                 model.color = #colorLiteral(red: 0.5568627451, green: 0.8666666667, blue: 0.3568627451, alpha: 1)
                 model.count = 32
@@ -67,8 +67,8 @@ class ContextChartView: UIView {
                 model.starColor = #colorLiteral(red: 0.5568627451, green: 0.8705882353, blue: 0.3568627451, alpha: 1)
                 model.endColor = #colorLiteral(red: 0.4784313725, green: 0.862745098, blue: 0.231372549, alpha: 1)
             case 1:
-                model.startAngle = dataArray[0] * CGFloat.pi * 2 + CGFloat.pi / 20
-                model.endAngle = (dataArray[0] + item) * CGFloat.pi * 2 + CGFloat.pi / 20
+                model.startAngle = dataArray[0] * CGFloat.pi * 2
+                model.endAngle = (dataArray[0] + item) * CGFloat.pi * 2
                 model.type = .chong
                 model.color = #colorLiteral(red: 0.9137254902, green: 0.1882352941, blue: 0.1764705882, alpha: 1)
                 model.title = "需冲刺"
@@ -78,8 +78,8 @@ class ContextChartView: UIView {
 
                 
             case 2:
-                model.startAngle = (dataArray[0] + dataArray[1]) * CGFloat.pi * 2 + CGFloat.pi / 20
-                model.endAngle = CGFloat.pi * 2 + CGFloat.pi / 20
+                model.startAngle = (dataArray[0] + dataArray[1]) * CGFloat.pi * 2
+                model.endAngle = CGFloat.pi * 2
                 model.type = .wen
                 model.color = #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1)
                 model.count = 27
@@ -89,6 +89,8 @@ class ContextChartView: UIView {
             default:
                 break
             }
+            model.startAngle += CGFloat.pi / 6
+            model.endAngle += CGFloat.pi / 6
             dataSource.append(model)
         }
     
@@ -126,11 +128,14 @@ extension ContextChartView {
 
         //重置圆点 设置圆心
         context.saveGState()
-        context.rotate(by: item.endAngle - CGFloat.pi / 20)
+        context.rotate(by: item.endAngle + CGFloat.pi / 120)
 //        let pointAngle =  -(CGFloat.pi / 20)
 //        let pointR = middleRadius + 11
 //        let smallCenter = CGPoint(x: centerPoint.x + pointR * cos(pointAngle), y: centerPoint.y + pointR * sin(pointAngle))
-        let smallCenter = CGPoint(x: middleRadius + lineWidth / 2 + 1, y: 0)
+        
+        let smallY = (middleRadius + lineWidth / 2) * tan(CGFloat.pi / 16)
+        let smallCenter = CGPoint(x: middleRadius + lineWidth / 2 - 1, y: -smallY)
+
 
         switch item.type {
         case .wen:
@@ -142,9 +147,9 @@ extension ContextChartView {
         }
         context.setStrokeColor(UIColor.white.cgColor)
 
-        context.setLineWidth(4.5)
-        context.setBlendMode(.destinationOut)
-        context.addArc(center: smallCenter, radius: lineWidth / 2 + 3.5, startAngle: 0, endAngle: CGFloat.pi, clockwise: false)
+        context.setLineWidth(4)
+//        context.setBlendMode(.destinationOut)
+        context.addArc(center: smallCenter, radius: smallY, startAngle: 0, endAngle: CGFloat.pi, clockwise: false)
         context.drawPath(using: .stroke)
         context.restoreGState()
         
