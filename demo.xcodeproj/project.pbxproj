@@ -44,6 +44,7 @@
 		84620C3B2563713F00695261 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620C3A2563713F00695261 /* OtherViewController.swift */; };
 		84620C44256371FC00695261 /* RecommandCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620C43256371FC00695261 /* RecommandCircleView.swift */; };
 		84620C492563966900695261 /* HeaderCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620C482563966900695261 /* HeaderCircleView.swift */; };
+		84620DDF2568D18700695261 /* PathChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620DDE2568D18700695261 /* PathChartView.swift */; };
 		8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */; };
 		8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */; };
 		8493E68424E25ECE003A5913 /* TimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */; };
@@ -118,6 +119,7 @@
 		84620C3A2563713F00695261 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		84620C43256371FC00695261 /* RecommandCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCircleView.swift; sourceTree = "<group>"; };
 		84620C482563966900695261 /* HeaderCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCircleView.swift; sourceTree = "<group>"; };
+		84620DDE2568D18700695261 /* PathChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathChartView.swift; sourceTree = "<group>"; };
 		8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewController.swift; sourceTree = "<group>"; };
 		8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerTableViewCell.xib; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				84620C482563966900695261 /* HeaderCircleView.swift */,
 				96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */,
 				96B02B022565535E0061331E /* ContextChartView.swift */,
+				84620DDE2568D18700695261 /* PathChartView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				8435A07C24EA716400CA8047 /* landmarkRow.swift in Sources */,
 				840E903A24DD4AE600721D3B /* SliderViewController.swift in Sources */,
 				8435A0A624EBADF900CA8047 /* Data.swift in Sources */,
+				84620DDF2568D18700695261 /* PathChartView.swift in Sources */,
 				8435A08024EA8AFB00CA8047 /* MapView.swift in Sources */,
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
 				96B02B032565535E0061331E /* ContextChartView.swift in Sources */,

@@ -18,9 +18,8 @@ class OtherViewController: UIViewController {
         let view = ContextChartView.init(frame: CGRect(x: 0, y: 100, width: with, height: with))
         self.view.addSubview(view)
         
-        let view2 = RecommandHeaderCircleView.init(frame: CGRect(x: 0, y: 500, width: with, height: with))
-//        view2.addCircleWithProgress()
-        self.view.addSubview(view2)
+//        let view2 = PathChartView.init(frame: CGRect(x: 0, y: 400, width: with, height: with))
+//        self.view.addSubview(view2)
         
         
 //        let view1 = HeaderCircleView.init(frame: CGRect(x: 0, y: 300, width: with, height: with))

@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+/// x1 = x0 + r * cos(angle * PI / 180)
+/// y1 = y0 + r * sin(angle * PI /180)
+
 class ContextChartView: UIView {
     
     /// 数据源
@@ -60,6 +64,8 @@ class ContextChartView: UIView {
                 model.color = #colorLiteral(red: 0.5568627451, green: 0.8666666667, blue: 0.3568627451, alpha: 1)
                 model.count = 32
                 model.title = "可保底"
+                model.starColor = #colorLiteral(red: 0.5568627451, green: 0.8705882353, blue: 0.3568627451, alpha: 1)
+                model.endColor = #colorLiteral(red: 0.4784313725, green: 0.862745098, blue: 0.231372549, alpha: 1)
             case 1:
                 model.startAngle = dataArray[0] * CGFloat.pi * 2 + CGFloat.pi / 20
                 model.endAngle = (dataArray[0] + item) * CGFloat.pi * 2 + CGFloat.pi / 20
@@ -67,6 +73,9 @@ class ContextChartView: UIView {
                 model.color = #colorLiteral(red: 0.9137254902, green: 0.1882352941, blue: 0.1764705882, alpha: 1)
                 model.title = "需冲刺"
                 model.count = 85
+                model.starColor = #colorLiteral(red: 1, green: 0.3137254902, blue: 0.3254901961, alpha: 1)
+                model.endColor = #colorLiteral(red: 0.9137254902, green: 0.1882352941, blue: 0.1764705882, alpha: 1)
+
                 
             case 2:
                 model.startAngle = (dataArray[0] + dataArray[1]) * CGFloat.pi * 2 + CGFloat.pi / 20
@@ -75,6 +84,8 @@ class ContextChartView: UIView {
                 model.color = #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1)
                 model.count = 27
                 model.title = "较稳妥"
+                model.starColor = #colorLiteral(red: 0.9960784314, green: 0.7921568627, blue: 0.1607843137, alpha: 1)
+                model.endColor = #colorLiteral(red: 0.9960784314, green: 0.6784313725, blue: 0.168627451, alpha: 1)
             default:
                 break
             }
@@ -95,15 +106,11 @@ extension ContextChartView {
 
         }
         
-        
-        if dataSource.count > 0 {
-            drawLayer1(dataSource[0], context: context)
-            drawLayer1(dataSource[1], context: context)
-            drawLayer1(dataSource[2], context: context)
+        for item in dataSource {
+            drawWhiteHalfcircle(item, context: context)
 
         }
-        
-        
+    
         for item in dataSource {
             drawLineChart(item, context: context)
 
@@ -113,7 +120,7 @@ extension ContextChartView {
 
     }
     
-    func drawLayer1(_ item: HeaderCircle, context: CGContext) {
+    func drawWhiteHalfcircle(_ item: HeaderCircle, context: CGContext) {
         
         context.translateBy(x: centerPoint.x, y: centerPoint.y)
 
@@ -136,7 +143,7 @@ extension ContextChartView {
         context.setStrokeColor(UIColor.white.cgColor)
 
         context.setLineWidth(4.5)
-//        context.setBlendMode(.destinationOut)
+        context.setBlendMode(.destinationOut)
         context.addArc(center: smallCenter, radius: lineWidth / 2 + 3.5, startAngle: 0, endAngle: CGFloat.pi, clockwise: false)
         context.drawPath(using: .stroke)
         context.restoreGState()
@@ -164,56 +171,39 @@ extension ContextChartView {
         }
 
         context.setLineWidth(lineWidth)
-        context.drawPath(using: .stroke)
+//        context.drawPath(using: .stroke)
+        
+        //使用rgb颜色空间
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let colors: [CGColor] = [item.starColor, item.endColor].map { $0.cgColor }
+        let compoents: [CGFloat] = colors.map { $0.components }.compactMap { $0 }.reduce([], +)
+        let locations: [CGFloat] = [0, 1]
+        let gradient = CGGradient(colorSpace: colorSpace, colorComponents: compoents,
+                                  locations: locations, count: locations.count)!
+        //渐变开始位置
+        let startCenter = CGPoint(x: centerPoint.x + bigRadius * cos(item.startAngle), y: centerPoint.y + bigRadius * sin(item.startAngle))
+        
+        let endCenter = CGPoint(x: centerPoint.x + bigRadius * cos(item.endAngle), y: centerPoint.y + bigRadius * sin(item.endAngle))
+        
+        context.replacePathWithStrokedPath()
+        context.clip()
+        
+        //绘制渐变
+        context.drawLinearGradient(gradient, start: startCenter, end: endCenter,
+                                   options: .drawsBeforeStartLocation)
+        context.resetClip()
+
+        
+        
         
         
         
         // 绘制文字
-        let pointAngle = item.startAngle + (item.endAngle - item.startAngle) / 2
-        let pointRdius = middleRadius + lineWidth / 2
-        let textCenter = CGPoint(x: centerPoint.x + pointRdius * cos(pointAngle), y: centerPoint.y + pointRdius * sin(pointAngle))
-//        let roatedAngle = CGFloat.pi * 2 - (item.endAngle - item.startAngle) / 2
-//        let roatedAngle = CGFloat.pi + (item.endAngle - item.startAngle) / 2 - item.endAngle / 2
-        let roatedAngle = getRotateAngle(item)
+        
+        let centerAngle = CGFloat.pi * 2 - item.endAngle + (item.endAngle - item.startAngle) / 2
+        
+        drawObliqueText(text: item.title, context: context, radius: middleRadius + lineWidth / 2, centerAngle: centerAngle, clockwise: true)
     
- 
-        context.translateBy(x: textCenter.x, y: textCenter.y)
-        context.saveGState()
-        context.rotate(by: roatedAngle)
-        let string = item.title as NSString
-        let style = NSMutableParagraphStyle.init()
-        style.alignment = .center
-        
-        let attributedArr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.paragraphStyle: style]
-        let width = string.boundingRect(with: CGSize(width: 200, height: 14), options: .usesLineFragmentOrigin, attributes: attributedArr, context: nil).size.width
-//        let rect = CGRect(x: textCenter.x - (width / 2), y: textCenter.y - 8, width: width, height: 15)
-        let rect = CGRect(x: -(width / 2), y: -7, width: width, height: 14)
-
-        
-        string.draw(in: rect, withAttributes: attributedArr)
-        context.restoreGState()
-        
-        context.translateBy(x: -textCenter.x, y: -textCenter.y)
-
-    
-
-
-
-        
-//        //使用rgb颜色空间
-//        let colorSpace = CGColorSpaceCreateDeviceRGB()
-//        let colors: [CGColor] = [#colorLiteral(red: 0.4588235294, green: 0.4823529412, blue: 1, alpha: 1), #colorLiteral(red: 0.3176470588, green: 0.1098039216, blue: 0.7058823529, alpha: 1)].map { $0.cgColor }
-//        let compoents: [CGFloat] = colors.map { $0.components }.compactMap { $0 }.reduce([], +)
-//        let locations: [CGFloat] = [0, 1]
-//        let gradient = CGGradient(colorSpace: colorSpace, colorComponents: compoents,
-//                                  locations: locations, count: locations.count)!
-//        //渐变开始位置
-//        let start = CGPoint(x: 0, y: 0)
-//        //渐变结束位置
-//        let end = CGPoint(x: bezierPath.bounds.width, y: bezierPath.bounds.height)
-//        //绘制渐变
-//        context.drawLinearGradient(gradient, start: start, end: end,
-//                                   options: .drawsBeforeStartLocation)
 
     
     }
@@ -346,6 +336,7 @@ extension ContextChartView {
         let countRect = CGRect(origin: countPoint, size: CGSize(width: countWith, height: 24))
         countAttributedString.draw(in: countRect)
         
+        
 
         
     }
@@ -408,6 +399,93 @@ extension ContextChartView {
     
 }
 
+
+// MARK: - 绘制文字倾斜度方法
+extension ContextChartView {
+    
+    /// 这将String str围绕半径为r的圆弧绘制，
+    /// 文字居中于极角centerAngle
+    func drawObliqueText(text: String, context: CGContext, radius: CGFloat, centerAngle: CGFloat, clockwise: Bool){
+        
+        context.translateBy (x: centerPoint.x, y: centerPoint.y)
+
+        // 单个字符串的数组，字符串中的每个字符
+        let characters: [String] = text.map { String($0) }
+        let characterCount = characters.count
+        let attributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)]
+        
+        // 这将是每个字符对向的弧线
+        var arcs: [CGFloat] = []
+        // 以及字符串所包含的总弧线
+        var totalArc: CGFloat = 0
+        
+        // 计算每个字母和它们的总数所对应的弧
+        for i in 0 ..< characterCount {
+            arcs += [chordToArc(characters[i].size(withAttributes: attributes).width, radius: radius)]
+            totalArc += arcs[i]
+        }
+        
+        // 我们是按顺时针方向书写吗（在12点钟朝上，在6点钟朝上颠倒）
+        // 还是逆时针（6点钟向右）？
+        let direction: CGFloat = clockwise ? -1 : 1
+        let slantCorrection: CGFloat = clockwise ? -.pi / 2 : .pi / 2
+        
+        //第一个字符的中心将位于
+        // thetaI = theta-totalArc / 2 + arcs [0] / 2
+        //但是我们在循环中添加了最后一项
+        var thetaI = centerAngle - direction * totalArc / 2
+        
+        for i in 0 ..< characterCount {
+            thetaI += direction * arcs[i] / 2
+            //依次调用centerText和每个字符。
+            //记得在slantAngle上加上+/-90º
+            //角色将“堆叠”成圆弧，而不是“文字流”
+            draw(character: characters[i], context: context, radius: radius, angle: thetaI, slantAngle: thetaI + slantCorrection)
+            //下一个字符的中心将位于
+            // thetaI = thetaI + arcs [i] / 2 + arcs [i + 1] / 2
+            //但是我们还是将最后一项保留到下一个循环的开始
+            thetaI += direction * arcs[i] / 2
+        }
+        
+        context.translateBy (x: -centerPoint.x, y: -centerPoint.y)
+
+    }
+    
+    ///反正弦函数：asin(1/2) = 30°
+    /// 正弦函数： sin(30°) = 0.5
+    func chordToArc(_ characterWith: CGFloat, radius: CGFloat) -> CGFloat {
+        return 2 * asin(characterWith / (2 * radius))
+    }
+    
+    ///这样绘制以居中位置为中心的String str
+    ///由极坐标（r，theta）指定
+    ///即x = r * cos（theta）y = r * sin（theta）
+    ///并旋转角度slantAngle
+    func draw(character: String, context: CGContext, radius: CGFloat, angle: CGFloat, slantAngle: CGFloat) {
+        
+        // Set the text attributes
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)]
+        //let attributes = [NSForegroundColorAttributeName: c, NSFontAttributeName: font]
+        // Save the context
+        context.saveGState()
+        // 撤消Y轴的反转（否则文本会倒退！）
+//        context.scaleBy(x: 1, y: -1)
+        // 将原点移动到文本的中心（手动使y轴反向）
+        context.translateBy(x: radius * cos(angle), y: -(radius * sin(angle)))
+        // Rotate the coordinate system
+        context.rotate(by: -slantAngle)
+        // 计算文字的宽度
+        let offsetSize = character.size(withAttributes: attributes)
+        // Move the origin by half the size of the text
+        context.translateBy (x: -offsetSize.width / 2, y: -offsetSize.height / 2)
+        // Move the origin to the centre of the text (negating the y-axis manually)
+        // Draw the text
+        character.draw(at: CGPoint(x: 0, y: 0), withAttributes: attributes)
+        // Restore the context
+        context.restoreGState()
+    }
+}
+
 /// 智能引擎判断折线区域
 enum EngineHeaderArea {
     
@@ -437,6 +515,10 @@ struct HeaderCircle {
     var count: Int = 0
     // 颜色
     var color: UIColor = .white
+    // 渐变起始颜色
+    var starColor: UIColor = .white
+    // 渐变结束颜色
+    var endColor: UIColor = .white
 }
 
 enum RecoommandType {
