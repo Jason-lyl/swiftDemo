@@ -63,8 +63,16 @@ class HomeViewController: UIViewController {
     }
     
     func jumpTimerVC() {
-        let vc = TimerTableViewController()
-        present(vc, animated: true, completion: nil)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 120, height: 150)
+        layout.minimumLineSpacing = 15
+        layout.minimumInteritemSpacing = 15
+        
+        
+        let vc = CollectionViewController.init(collectionViewLayout: layout)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setSliderVC() {
