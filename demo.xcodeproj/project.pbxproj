@@ -66,6 +66,11 @@
 		96B02BF325752CA00061331E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02BF125752CA00061331E /* CollectionViewCell.swift */; };
 		96B02BF425752CA00061331E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B02BF225752CA00061331E /* CollectionViewCell.xib */; };
 		96B02BFC257530D00061331E /* SKDiffusionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02BFB257530CF0061331E /* SKDiffusionTransition.swift */; };
+		96B02C022576604B0061331E /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C012576604B0061331E /* PresentAnimator.swift */; };
+		96B02C0A257660770061331E /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C09257660770061331E /* DismissAnimator.swift */; };
+		96B02C12257660A70061331E /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C11257660A70061331E /* PresentationController.swift */; };
+		96B02C17257660C70061331E /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C16257660C70061331E /* TransitionManager.swift */; };
+		96B02C22257662AC0061331E /* SizeRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C21257662AC0061331E /* SizeRatio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +158,11 @@
 		96B02BF125752CA00061331E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		96B02BF225752CA00061331E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		96B02BFB257530CF0061331E /* SKDiffusionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDiffusionTransition.swift; sourceTree = "<group>"; };
+		96B02C012576604B0061331E /* PresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimator.swift; sourceTree = "<group>"; };
+		96B02C09257660770061331E /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
+		96B02C11257660A70061331E /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		96B02C16257660C70061331E /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		96B02C21257662AC0061331E /* SizeRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeRatio.swift; sourceTree = "<group>"; };
 		A25254796F95F36D233BF318 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E339390615FA115983543685 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +244,7 @@
 		8435A07224EA687400CA8047 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				96B02C00257660210061331E /* amation */,
 				96B02BEC25752C800061331E /* CollectionViewController.swift */,
 				8435A07324EA688A00CA8047 /* HomeViewController.swift */,
 				84359FC824EA556800CA8047 /* Views */,
@@ -376,6 +387,18 @@
 				A25254796F95F36D233BF318 /* Pods_demo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96B02C00257660210061331E /* amation */ = {
+			isa = PBXGroup;
+			children = (
+				96B02C012576604B0061331E /* PresentAnimator.swift */,
+				96B02C09257660770061331E /* DismissAnimator.swift */,
+				96B02C11257660A70061331E /* PresentationController.swift */,
+				96B02C16257660C70061331E /* TransitionManager.swift */,
+				96B02C21257662AC0061331E /* SizeRatio.swift */,
+			);
+			path = amation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,10 +598,12 @@
 				8435A07024EA66CF00CA8047 /* TabBarViewController.swift in Sources */,
 				84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */,
 				96B02BF325752CA00061331E /* CollectionViewCell.swift in Sources */,
+				96B02C17257660C70061331E /* TransitionManager.swift in Sources */,
 				8435A07A24EA6DB800CA8047 /* SwiftUIView.swift in Sources */,
 				84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */,
 				8435A07424EA688A00CA8047 /* HomeViewController.swift in Sources */,
 				8435A07C24EA716400CA8047 /* landmarkRow.swift in Sources */,
+				96B02C022576604B0061331E /* PresentAnimator.swift in Sources */,
 				840E903A24DD4AE600721D3B /* SliderViewController.swift in Sources */,
 				8435A0A624EBADF900CA8047 /* Data.swift in Sources */,
 				84620DDF2568D18700695261 /* PathChartView.swift in Sources */,
@@ -590,10 +615,12 @@
 				8435A07E24EA850D00CA8047 /* CircleImage.swift in Sources */,
 				84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */,
 				96B02A15256409B60061331E /* RecommandHeaderCircleView.swift in Sources */,
+				96B02C22257662AC0061331E /* SizeRatio.swift in Sources */,
 				8435A08224EB793200CA8047 /* ContentView.swift in Sources */,
 				8435A06E24EA66A400CA8047 /* NavigationController.swift in Sources */,
 				842DE15F249AF4680068F00D /* ProgressView.swift in Sources */,
 				8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */,
+				96B02C12257660A70061331E /* PresentationController.swift in Sources */,
 				96B02BED25752C800061331E /* CollectionViewController.swift in Sources */,
 				8435A08624EB9E7B00CA8047 /* Landmark.swift in Sources */,
 				84620C44256371FC00695261 /* RecommandCircleView.swift in Sources */,
@@ -603,6 +630,7 @@
 				8435A0AA24EBD25F00CA8047 /* LandmarkDetail.swift in Sources */,
 				8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */,
 				842DE9DF24A98B390068F00D /* OneKeyLayerView.swift in Sources */,
+				96B02C0A257660770061331E /* DismissAnimator.swift in Sources */,
 				8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */,
 				960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */,
 				84BDF1A62499A4FB005F4D3D /* ProbabilityHalfCircleView.swift in Sources */,

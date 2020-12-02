@@ -9,8 +9,22 @@
 import UIKit
 
 class OtherViewController: UIViewController {
+    
+    var transitionStyle: TransitionStyle = .sheet
+
+    let manager = TransitionManager()
+    
+    convenience init(type: TransitionStyle) {
+        self.init()
+        manager.alignment = .bottom
+        manager.sizeRatio = SizeRatio(height: 0.9)
+        manager.transitionStyle = type
+        modalPresentationStyle = .custom
+        transitioningDelegate = manager
+    }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.backgroundColor = .white
         let with = self.view.frame.width

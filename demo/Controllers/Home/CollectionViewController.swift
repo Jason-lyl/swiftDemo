@@ -23,7 +23,7 @@ class CollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        navigationController?.delegate = self
+//        navigationController?.delegate = self
         collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
 
         for index in 0 ..< 12 {
@@ -73,13 +73,14 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let VC = OtherViewController()
+        let VC = OtherViewController.init(type: .alert)
         VC.view.backgroundColor = dataSource[indexPath.item].color
         VC.modalTransitionStyle = .crossDissolve
-        VC.modalPresentationStyle = .custom
-        selectedView = collectionView.cellForItem(at: indexPath)
-        
-        navigationController?.pushViewController(VC, animated: true)
+//        VC.modalPresentationStyle = .custom
+//        selectedView = collectionView.cellForItem(at: indexPath)
+        self.present(VC, animated: true, completion: nil)
+//        navigationController?.hidesBottomBarWhenPushed = true
+//        navigationController?.pushViewController(VC, animated: true)
     }
 
     // MARK: UICollectionViewDelegate
