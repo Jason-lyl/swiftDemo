@@ -44,7 +44,9 @@ extension DismissAnimator {
         let duration = transitionDuration(using: context)
         let transform = transForm(fromView: fromView)
         UIView.animate(withDuration: duration, animations: {
-            fromView.transform = transform
+            let transform1 = CGAffineTransform(scaleX: 0.2, y: 0.2)
+//            transform1.rotated(by: CGFloat.pi)
+            fromView.transform = transform1
             if self.transitionStyle == .fade {
                 fromView.alpha = 0
             }
@@ -60,7 +62,9 @@ extension DismissAnimator {
     func transForm(fromView: UIView) -> CGAffineTransform {
         switch transitionStyle {
         case .alert:
-            return CGAffineTransform(scaleX: 0.001, y: 0.001)
+//            return CGAffineTransform(scaleX: 0.001, y: 0.001)
+            return CGAffineTransform(translationX: 100, y: 300)
+
         case .sheet:
             return CGAffineTransform(translationX: 0, y: fromView.frame.maxY)
         case .push:

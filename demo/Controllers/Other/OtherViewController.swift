@@ -14,7 +14,9 @@ class OtherViewController: UIViewController {
 
     let manager = TransitionManager()
     
-    convenience init(type: TransitionStyle) {
+    var selected: UIView?
+    
+    convenience init(type: TransitionStyle, selectedView: UIView) {
         self.init()
         manager.alignment = .bottom
         manager.sizeRatio = SizeRatio(height: 0.9)

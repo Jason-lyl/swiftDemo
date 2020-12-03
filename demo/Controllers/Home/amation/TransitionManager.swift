@@ -19,6 +19,7 @@ class TransitionManager: NSObject {
     var presentTransition = UIPercentDrivenInteractiveTransition()
     var dismissTransition = UIPercentDrivenInteractiveTransition()
     
+    var selectedView: UIView?
     var closeBlock: (() -> Void)?
 
     var isInteractive: Bool = false
@@ -46,7 +47,7 @@ extension TransitionManager: UIViewControllerTransitioningDelegate {
     }
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PresentAnimator(style: transitionStyle)
+        return PresentAnimator(style: transitionStyle, selectedView: selectedView)
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

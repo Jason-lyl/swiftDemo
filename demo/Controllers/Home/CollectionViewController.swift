@@ -73,8 +73,16 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let VC = OtherViewController.init(type: .alert)
+        
+
+        let attributes = collectionView.layoutAttributesForItem(at: indexPath)
+        guard let cellRect = attributes?.frame else { return }
+        let cellFrame = collectionView.convert(cellRect, to: collectionView.superview)
+        
+        let cell = collectionView.cellForItem(at: indexPath)!
+        let VC = OtherViewController.init(type: .alert, selectedView: cell)
         VC.view.backgroundColor = dataSource[indexPath.item].color
+        
         VC.modalTransitionStyle = .crossDissolve
 //        VC.modalPresentationStyle = .custom
 //        selectedView = collectionView.cellForItem(at: indexPath)

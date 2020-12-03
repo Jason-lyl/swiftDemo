@@ -20,8 +20,10 @@ import UIKit
 /// 弹出动画师
 class PresentAnimator: NSObject {
     var transitionStyle: TransitionStyle
+    var selectedView: UIView?
 
-    init(style: TransitionStyle) {
+    init(style: TransitionStyle, selectedView: UIView?) {
+        self.selectedView = selectedView
         self.transitionStyle = style
     }
 }
@@ -38,6 +40,10 @@ extension PresentAnimator: UIViewControllerAnimatedTransitioning {
         guard let toView = transitionContext.view(forKey: .to) else {
             return
         }
+        
+//        guard let selecteView = selectedView else {
+//            return
+//        }
 
         let containerView = transitionContext.containerView
         containerView.addSubview(toView)
