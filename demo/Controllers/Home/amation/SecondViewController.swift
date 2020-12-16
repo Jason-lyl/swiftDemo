@@ -25,15 +25,22 @@ class SecondViewController: UIViewController {
     
     let animator = TranAnimatorManager()
 
-    convenience init(selectedCellSnapshot: UIView, cellSelectedRect: CGRect, cellAfterRect: CGRect, selectedImage: UIImageView) {
+    convenience init(selectedCellSnapshot: UIView, cellSelectedRect: CGRect, cellAfterRect: CGRect, selectedImage: UIImageView, firstView: UIView) {
         self.init(nibName: nil, bundle: nil)
         animator.selectedCellSnapshot = selectedCellSnapshot
         animator.cellSelectedRect = cellSelectedRect
         animator.afterRect = cellAfterRect
         animator.imageView = selectedImage
+        animator.firstView = firstView
         modalPresentationStyle = .fullScreen
+    
 
         transitioningDelegate = animator
+    }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
 

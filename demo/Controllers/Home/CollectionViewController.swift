@@ -79,29 +79,11 @@ class CollectionViewController: UICollectionViewController {
         if let cell = selectedCell {
             selectedCellFrame = cell.convert(cell.bounds, to: self.view)
         }
-//        let animator = TranAnimatorManager.init(selectedCellSnapshot: selectedCellImageViewSnapshot, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect)
-        let vc = SecondViewController.init(selectedCellSnapshot: selectedCellImageViewSnapshot!, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect, selectedImage: (selectedCell?.imageView)!)
-//        vc.transitioningDelegate = self
-//        vc.modalPresentationStyle = .fullScreen
+        let firstView = self.navigationController?.view.snapshotView(afterScreenUpdates: true)
+        let vc = SecondViewController.init(selectedCellSnapshot: selectedCellImageViewSnapshot!, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect, selectedImage: (selectedCell?.imageView)!, firstView: firstView!)
         vc.data = dataSource[indexPath.row]
         self.present(vc, animated: true, completion: nil)
 
     }
     
 }
-
-extension CollectionViewController: UIViewControllerTransitioningDelegate {
-
-    // 2
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        return TranPresentAnimator(selectedCellSnapshot: selectedCellImageViewSnapshot, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect, imageView: selectedCell?.imageView)
-    }
-
-    // 3
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        return TranDimissAnimator(selectedCellSnapshot: selectedCellImageViewSnapshot, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect, imageView: selectedCell?.imageView)
-    }
-}
-

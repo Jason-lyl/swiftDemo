@@ -16,6 +16,7 @@ class TranAnimatorManager: NSObject {
     var afterRect: CGRect = .zero
     var gesture: UIPanGestureRecognizer?
     var imageView: UIImageView?
+    var firstView: UIView?
     
     
     lazy var drivenInteractive = GestureDrivenInteractiveTransition.init(gestureRecognizer: gesture)
@@ -32,20 +33,22 @@ extension TranAnimatorManager: UIViewControllerTransitioningDelegate {
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let shapShot = selectedCellSnapshot,
+              let first = firstView,
               let image = imageView else {
             return nil
         }
         
-        return TranPresentAnimator(selectedCellSnapshot: shapShot, cellSelectedRect: cellSelectedRect, cellAfterRect: afterRect, imageView: image)
+        return TranPresentAnimator(selectedCellSnapshot: shapShot, cellSelectedRect: cellSelectedRect, cellAfterRect: afterRect, imageView: image, firstView: first)
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let shapShot = self.selectedCellSnapshot ,
+              let first = firstView,
               let image = imageView else {
             return nil
         }
         
-        return TranDimissAnimator(selectedCellSnapshot: shapShot, cellSelectedRect: cellSelectedRect, cellAfterRect: afterRect, imageView: image)
+        return TranDimissAnimator(selectedCellSnapshot: shapShot, cellSelectedRect: cellSelectedRect, cellAfterRect: afterRect, imageView: image, firstView: first)
         
     }
     

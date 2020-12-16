@@ -85,6 +85,7 @@ class HomeViewController: UIViewController {
         
         
         let vc = CollectionViewController.init(collectionViewLayout: layout)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
