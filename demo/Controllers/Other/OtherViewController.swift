@@ -10,20 +10,9 @@ import UIKit
 
 class OtherViewController: UIViewController {
     
-    var transitionStyle: TransitionStyle = .sheet
-
-    let manager = TransitionManager()
     
     var selected: UIView?
     
-    convenience init(type: TransitionStyle, selectedView: UIView) {
-        self.init()
-        manager.alignment = .bottom
-        manager.sizeRatio = SizeRatio(height: 0.9)
-        manager.transitionStyle = type
-        modalPresentationStyle = .custom
-        transitioningDelegate = manager
-    }
 
     override func viewDidLoad() {
         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,35 +16,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJT-Ag-jmG">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
-                        <color key="backgroundColor" red="1" green="0.28617058519999999" blue="0.32692686700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="100" id="vtk-rr-n7V"/>
-                        </constraints>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Un7-0H-7dF">
-                        <rect key="frame" x="16" y="116" width="88" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lP3-6d-aes">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Un7-0H-7dF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="2tL-vc-dDA"/>
-                <constraint firstAttribute="bottom" secondItem="Un7-0H-7dF" secondAttribute="bottom" id="BXt-Zr-DYP"/>
-                <constraint firstAttribute="trailing" secondItem="PJT-Ag-jmG" secondAttribute="trailing" id="E7d-vK-ssj"/>
-                <constraint firstItem="PJT-Ag-jmG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ewh-Sm-Gjm"/>
-                <constraint firstItem="PJT-Ag-jmG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RpP-16-Cc9"/>
-                <constraint firstItem="Un7-0H-7dF" firstAttribute="top" secondItem="PJT-Ag-jmG" secondAttribute="bottom" constant="16" id="Syn-cS-G6M"/>
-                <constraint firstAttribute="trailing" secondItem="Un7-0H-7dF" secondAttribute="trailing" constant="16" id="pJ8-AC-dNS"/>
+                <constraint firstAttribute="bottom" secondItem="lP3-6d-aes" secondAttribute="bottom" id="GaN-Ns-REf"/>
+                <constraint firstItem="lP3-6d-aes" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Y0H-9c-eOm"/>
+                <constraint firstAttribute="trailing" secondItem="lP3-6d-aes" secondAttribute="trailing" id="j3h-Oz-Jt4"/>
+                <constraint firstItem="lP3-6d-aes" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uQA-yF-UOQ"/>
             </constraints>
             <connections>
-                <outlet property="backView" destination="PJT-Ag-jmG" id="CG5-6Z-dP6"/>
-                <outlet property="titleLabel" destination="Un7-0H-7dF" id="9X9-46-G5r"/>
+                <outlet property="imageView" destination="lP3-6d-aes" id="bkr-1B-JOK"/>
             </connections>
-            <point key="canvasLocation" x="222" y="65"/>
+            <point key="canvasLocation" x="221.73913043478262" y="64.955357142857139"/>
         </collectionViewCell>
     </objects>
 </document>

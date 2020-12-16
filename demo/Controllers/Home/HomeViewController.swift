@@ -24,6 +24,11 @@ class HomeViewController: UIViewController {
         
     }
     
+    
+    func compare()  {
+        
+    }
+    
     func setUpViews() {
         self.view.backgroundColor = UIColor.white
         let view = ProbabilityHalfCircleView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 200))
@@ -51,7 +56,13 @@ class HomeViewController: UIViewController {
         let url = "https://wx.qlogo.cn/mmopen/vi_32/oJJkuvBb8ZtERMerQUEkVlQdr0Y4eoMG9oQqZkGsYibVrOGSbHTWT9An6jibJY3fwI7MPrpKccWMgA33yQP2qpEg/132"
         imageView.kf.setImage(with: URL.init(string: url)!)
         view.addSubview(imageView)
-        
+        imageView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(imageViewClick))
+        imageView.addGestureRecognizer(gesture)
+    }
+    
+    @objc func imageViewClick() {
+        self.navigationController?.pushViewController(GradientLayerViewController(), animated: true)
     }
     
     @objc func buttonClick() {
@@ -65,8 +76,10 @@ class HomeViewController: UIViewController {
     func jumpTimerVC() {
         
         let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 40, left: 50, bottom: 20, right: 50)
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 120, height: 150)
+        let with = (kScreenWidth - 100 - 15) / 2
+        layout.itemSize = CGSize(width: with, height: with / 2 * 3)
         layout.minimumLineSpacing = 15
         layout.minimumInteritemSpacing = 15
         

@@ -8,49 +8,45 @@
 
 import UIKit
 
+let bgcolor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+
+let kScreenHeight = UIScreen.main.bounds.size.height
+
+let kScreenWidth = UIScreen.main.bounds.size.width
+
 private let reuseIdentifier = "CollectionViewCell"
 
 class CollectionViewController: UICollectionViewController {
 
-    let transition = SKDiffusionTransition()
-    var selectedView:UIView?
+    var selectedCell: CollectionViewCell?
+    var selectedCellImageViewSnapshot: UIView?
+    
+    var selectedCellFrame: CGRect = .zero
+    var afterRect: CGRect = .zero
 
-    var dataSource: [CollectItem] = []
+    var dataSource: [CellData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        navigationController?.delegate = self
         collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
 
-        for index in 0 ..< 12 {
-            let rade = CGFloat(arc4random() % 244) + 1
-            let rade1 = CGFloat(arc4random() % 244) + 1
-            let color = UIColor(red: 1, green: rade/255, blue: rade1/255, alpha: 1)
-
-            var item = CollectItem()
-            item.color = color
-            item.title = "abcd\(index)"
-            dataSource.append(item)
-        }
+        dataSource = [
+            .init(image: #imageLiteral(resourceName: "7"), title: "Seychelles"),
+            .init(image: #imageLiteral(resourceName: "1"), title: "Königssee"),
+            .init(image: #imageLiteral(resourceName: "3"), title: "Zanzibar"),
+            .init(image: #imageLiteral(resourceName: "7"), title: "Serengeti"),
+            .init(image: #imageLiteral(resourceName: "4"), title: "Castle"),
+            .init(image: #imageLiteral(resourceName: "2"), title: "Kyiv"),
+            .init(image: #imageLiteral(resourceName: "turtlerock"), title: "Munich"),
+            .init(image: #imageLiteral(resourceName: "1"), title: "Lake")
+        ]
         
         collectionView.reloadData()
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = bgcolor
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -67,77 +63,45 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         cell.configure(dataSource[indexPath.item])
-        // Configure the cell
     
         return cell
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let height = kScreenWidth / 2 * 3
 
-        let attributes = collectionView.layoutAttributesForItem(at: indexPath)
-        guard let cellRect = attributes?.frame else { return }
-        let cellFrame = collectionView.convert(cellRect, to: collectionView.superview)
-        
-        let cell = collectionView.cellForItem(at: indexPath)!
-        let VC = OtherViewController.init(type: .alert, selectedView: cell)
-        VC.view.backgroundColor = dataSource[indexPath.item].color
-        
-        VC.modalTransitionStyle = .crossDissolve
-//        VC.modalPresentationStyle = .custom
-//        selectedView = collectionView.cellForItem(at: indexPath)
-        self.present(VC, animated: true, completion: nil)
-//        navigationController?.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(VC, animated: true)
+        afterRect = CGRect(x: 0, y: 0, width: kScreenWidth, height: height)
+
+        selectedCell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell
+        selectedCellImageViewSnapshot = selectedCell?.snapshotView(afterScreenUpdates: false)
+        if let cell = selectedCell {
+            selectedCellFrame = cell.convert(cell.bounds, to: self.view)
+        }
+//        let animator = TranAnimatorManager.init(selectedCellSnapshot: selectedCellImageViewSnapshot, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect)
+        let vc = SecondViewController.init(selectedCellSnapshot: selectedCellImageViewSnapshot!, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect, selectedImage: (selectedCell?.imageView)!)
+//        vc.transitioningDelegate = self
+//        vc.modalPresentationStyle = .fullScreen
+        vc.data = dataSource[indexPath.row]
+        self.present(vc, animated: true, completion: nil)
+
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
-
 }
 
-// MARK: UINavigationControllerDelegate
-extension CollectionViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+extension CollectionViewController: UIViewControllerTransitioningDelegate {
+
+    // 2
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        if selectedView != nil {
-            transition.selectedView = selectedView!
-        }
+        return TranPresentAnimator(selectedCellSnapshot: selectedCellImageViewSnapshot, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect, imageView: selectedCell?.imageView)
+    }
+
+    // 3
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        if fromVC is CollectionViewController {
-            transition.isPush = true
-        } else {
-            transition.isPush = false
-        }
-        
-        return transition
+        return TranDimissAnimator(selectedCellSnapshot: selectedCellImageViewSnapshot, cellSelectedRect: selectedCellFrame, cellAfterRect: afterRect, imageView: selectedCell?.imageView)
     }
 }
+
