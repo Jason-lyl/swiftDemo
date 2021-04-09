@@ -58,6 +58,14 @@
 		84BDF1982499A44C005F4D3D /* demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1972499A44C005F4D3D /* demoUITests.swift */; };
 		84BDF1A62499A4FB005F4D3D /* ProbabilityHalfCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDF1A52499A4FB005F4D3D /* ProbabilityHalfCircleView.swift */; };
 		84BE0AFB25876CB600E01367 /* GradientLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE0AFA25876CB600E01367 /* GradientLayerViewController.swift */; };
+		84C240FE261EC70800F9173B /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C240FD261EC70800F9173B /* ExcelView.swift */; };
+		84C24103261EC71600F9173B /* ExcelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C24102261EC71600F9173B /* ExcelView.xib */; };
+		84C24109261ECF1700F9173B /* ExcelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C24107261ECF1700F9173B /* ExcelViewCell.swift */; };
+		84C2410A261ECF1700F9173B /* ExcelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C24108261ECF1700F9173B /* ExcelViewCell.xib */; };
+		84C24113261ED58600F9173B /* ExcelSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C24112261ED58600F9173B /* ExcelSectionView.swift */; };
+		84C24118261ED5A700F9173B /* ExcelSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C24117261ED5A700F9173B /* ExcelSectionView.xib */; };
+		84C2411E261EE3B800F9173B /* ExcelColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2411C261EE3B800F9173B /* ExcelColumnCell.swift */; };
+		84C2411F261EE3B800F9173B /* ExcelColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C2411D261EE3B800F9173B /* ExcelColumnCell.xib */; };
 		84D8F0EF2585C02E009F3F3B /* GestureDrivenInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8F0EE2585C02E009F3F3B /* GestureDrivenInteractiveTransition.swift */; };
 		960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CA9E524B74A3300BBF45E /* MyTableViewController.swift */; };
 		960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CA9E724B74A9500BBF45E /* MyTableViewCell.swift */; };
@@ -153,6 +161,14 @@
 		84BDF1992499A44C005F4D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84BDF1A52499A4FB005F4D3D /* ProbabilityHalfCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbabilityHalfCircleView.swift; sourceTree = "<group>"; };
 		84BE0AFA25876CB600E01367 /* GradientLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerViewController.swift; sourceTree = "<group>"; };
+		84C240FD261EC70800F9173B /* ExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
+		84C24102261EC71600F9173B /* ExcelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExcelView.xib; sourceTree = "<group>"; };
+		84C24107261ECF1700F9173B /* ExcelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelViewCell.swift; sourceTree = "<group>"; };
+		84C24108261ECF1700F9173B /* ExcelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExcelViewCell.xib; sourceTree = "<group>"; };
+		84C24112261ED58600F9173B /* ExcelSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelSectionView.swift; sourceTree = "<group>"; };
+		84C24117261ED5A700F9173B /* ExcelSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExcelSectionView.xib; sourceTree = "<group>"; };
+		84C2411C261EE3B800F9173B /* ExcelColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelColumnCell.swift; sourceTree = "<group>"; };
+		84C2411D261EE3B800F9173B /* ExcelColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExcelColumnCell.xib; sourceTree = "<group>"; };
 		84D8F0EE2585C02E009F3F3B /* GestureDrivenInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDrivenInteractiveTransition.swift; sourceTree = "<group>"; };
 		960CA9E524B74A3300BBF45E /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		960CA9E724B74A9500BBF45E /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
@@ -322,6 +338,7 @@
 				96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */,
 				96B02B022565535E0061331E /* ContextChartView.swift */,
 				84620DDE2568D18700695261 /* PathChartView.swift */,
+				84C2410E261ED52600F9173B /* ExcelView */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -378,6 +395,21 @@
 				84BDF1992499A44C005F4D3D /* Info.plist */,
 			);
 			path = demoUITests;
+			sourceTree = "<group>";
+		};
+		84C2410E261ED52600F9173B /* ExcelView */ = {
+			isa = PBXGroup;
+			children = (
+				84C240FD261EC70800F9173B /* ExcelView.swift */,
+				84C24102261EC71600F9173B /* ExcelView.xib */,
+				84C24107261ECF1700F9173B /* ExcelViewCell.swift */,
+				84C24108261ECF1700F9173B /* ExcelViewCell.xib */,
+				84C24112261ED58600F9173B /* ExcelSectionView.swift */,
+				84C24117261ED5A700F9173B /* ExcelSectionView.xib */,
+				84C2411C261EE3B800F9173B /* ExcelColumnCell.swift */,
+				84C2411D261EE3B800F9173B /* ExcelColumnCell.xib */,
+			);
+			path = ExcelView;
 			sourceTree = "<group>";
 		};
 		872C9664589FCBF2F0265974 /* Pods */ = {
@@ -523,8 +555,11 @@
 				8493E68A24E270AA003A5913 /* OtherTimerTableViewCell.xib in Resources */,
 				8435A09C24EBACFB00CA8047 /* stmarylake.jpg in Resources */,
 				8493E68424E25ECE003A5913 /* TimerTableViewCell.xib in Resources */,
+				84C24118261ED5A700F9173B /* ExcelSectionView.xib in Resources */,
 				8435A0A324EBACFB00CA8047 /* silversalmoncreek.jpg in Resources */,
 				8435A0A224EBACFB00CA8047 /* umbagog.jpg in Resources */,
+				84C24103261EC71600F9173B /* ExcelView.xib in Resources */,
+				84C2410A261ECF1700F9173B /* ExcelViewCell.xib in Resources */,
 				96B02BF425752CA00061331E /* CollectionViewCell.xib in Resources */,
 				8435A09924EBACFB00CA8047 /* turtlerock.jpg in Resources */,
 				8435A09824EBACFB00CA8047 /* yukon_charleyrivers.jpg in Resources */,
@@ -536,6 +571,7 @@
 				8435A08A24EBACD800CA8047 /* landmarkData.json in Resources */,
 				84BDF17F2499A44C005F4D3D /* Assets.xcassets in Resources */,
 				8435A09E24EBACFB00CA8047 /* icybay.jpg in Resources */,
+				84C2411F261EE3B800F9173B /* ExcelColumnCell.xib in Resources */,
 				8435A09F24EBACFB00CA8047 /* chincoteague.jpg in Resources */,
 				840E903B24DD4AE600721D3B /* SliderViewController.xib in Resources */,
 			);
@@ -622,6 +658,7 @@
 				8435A08024EA8AFB00CA8047 /* MapView.swift in Sources */,
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
 				96B02B032565535E0061331E /* ContextChartView.swift in Sources */,
+				84C240FE261EC70800F9173B /* ExcelView.swift in Sources */,
 				84620C3B2563713F00695261 /* OtherViewController.swift in Sources */,
 				960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */,
 				845346132584F8EC00DB19EB /* SecondViewController.swift in Sources */,
@@ -633,11 +670,14 @@
 				8435A06E24EA66A400CA8047 /* NavigationController.swift in Sources */,
 				842DE15F249AF4680068F00D /* ProgressView.swift in Sources */,
 				8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */,
+				84C24113261ED58600F9173B /* ExcelSectionView.swift in Sources */,
 				96B02BED25752C800061331E /* CollectionViewController.swift in Sources */,
 				8435A08624EB9E7B00CA8047 /* Landmark.swift in Sources */,
 				84620C44256371FC00695261 /* RecommandCircleView.swift in Sources */,
 				96B02BFC257530D00061331E /* SKDiffusionTransition.swift in Sources */,
 				8435A07724EA68B200CA8047 /* SwiftUIViewController.swift in Sources */,
+				84C24109261ECF1700F9173B /* ExcelViewCell.swift in Sources */,
+				84C2411E261EE3B800F9173B /* ExcelColumnCell.swift in Sources */,
 				8435A0A824EBCF6B00CA8047 /* LandmarkList.swift in Sources */,
 				8435A0AA24EBD25F00CA8047 /* LandmarkDetail.swift in Sources */,
 				8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */,
