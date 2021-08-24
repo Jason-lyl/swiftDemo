@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExcelView" customModule="demo" customModuleProvider="target">
+            <connections>
+                <outlet property="columnTableView" destination="hDS-Go-0O1" id="rQx-mm-kfK"/>
+                <outlet property="scrollView" destination="pS8-3Y-j4F" id="j3Z-BI-HaQ"/>
+                <outlet property="sectionView" destination="lDh-H3-ajR" id="GFh-zJ-cEh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xbq-N0-Utx">
+                    <rect key="frame" x="0.0" y="0.0" width="378" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDh-H3-ajR" customClass="ExcelSectionView" customModule="demo" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="kMw-31-SLi"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNk-61-Ugv">
+                            <rect key="frame" x="0.0" y="60" width="378" height="240"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hDS-Go-0O1">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="240"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="6MC-GO-O1W"/>
+                                    </constraints>
+                                </tableView>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS8-3Y-j4F">
+                                    <rect key="frame" x="100" y="0.0" width="278" height="240"/>
+                                </scrollView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Xbq-N0-Utx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="01c-VY-Gvq"/>
+                <constraint firstAttribute="bottom" secondItem="Xbq-N0-Utx" secondAttribute="bottom" id="Luy-uq-WrD"/>
+                <constraint firstItem="Xbq-N0-Utx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MUB-4y-rwW"/>
+                <constraint firstAttribute="trailing" secondItem="Xbq-N0-Utx" secondAttribute="trailing" id="nJn-N2-dd8"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-66.666666666666671" y="-86.71875"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

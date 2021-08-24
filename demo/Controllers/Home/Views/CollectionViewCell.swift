@@ -9,27 +9,37 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell, CellConfigurable {
-
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var backView: UIView!
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
     
-    func configure(_ item: CollectItem) {
-        backView.backgroundColor = item.color
-        titleLabel.text = item.title
+    
+    func configure(_ item: CellData) {
+        imageView.image = item.image
+
     }
     
     static var nib: UINib? {
         return UINib(nibName: reuseableIdentifier, bundle: nil)
     }
 
+    
 }
 
 struct CollectItem {
     var color: UIColor = .black
     var title: String = ""
 }
+
+struct CellData {
+
+    let image: UIImage
+    let title: String
+}
+

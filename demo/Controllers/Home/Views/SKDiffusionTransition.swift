@@ -36,7 +36,7 @@ class SKDiffusionTransition:NSObject, UIViewControllerAnimatedTransitioning {
             containerView.addSubview(fromView)
             
             toView.frame = selectedView.frame
-            toView.clipsToBounds = true
+//            toView.clipsToBounds = true
             containerView.addSubview(toView)
             
             UIView.animate(withDuration: 0.5, animations: {
@@ -60,7 +60,6 @@ class SKDiffusionTransition:NSObject, UIViewControllerAnimatedTransitioning {
 
             UIView.animate(withDuration: 0.5, animations: {
                 maskView.frame = self.selectedView.frame
-                maskView.layer.cornerRadius = self.selectedView.frame.width/2
                 
             }, completion: { finished in
                 // don't know why it will crash
