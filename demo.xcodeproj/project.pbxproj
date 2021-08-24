@@ -60,6 +60,7 @@
 		960CA9EA24B74A9500BBF45E /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960CA9E824B74A9500BBF45E /* MyTableViewCell.xib */; };
 		960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */; };
 		960CA9EE24B74B7100BBF45E /* MyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */; };
+		96221BD726D5412D0032C11C /* StatisticsCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96221BD626D5412D0032C11C /* StatisticsCredit.swift */; };
 		96B02A15256409B60061331E /* RecommandHeaderCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */; };
 		96B02B032565535E0061331E /* ContextChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02B022565535E0061331E /* ContextChartView.swift */; };
 		96B02BED25752C800061331E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02BEC25752C800061331E /* CollectionViewController.swift */; };
@@ -71,6 +72,7 @@
 		96B02C12257660A70061331E /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C11257660A70061331E /* PresentationController.swift */; };
 		96B02C17257660C70061331E /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C16257660C70061331E /* TransitionManager.swift */; };
 		96B02C22257662AC0061331E /* SizeRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02C21257662AC0061331E /* SizeRatio.swift */; };
+		96DA383526D53F5B00EAB72B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA383426D53F5B00EAB72B /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,7 @@
 		960CA9E824B74A9500BBF45E /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeaderView.swift; sourceTree = "<group>"; };
 		960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyHeaderView.xib; sourceTree = "<group>"; };
+		96221BD626D5412D0032C11C /* StatisticsCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCredit.swift; sourceTree = "<group>"; };
 		96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandHeaderCircleView.swift; sourceTree = "<group>"; };
 		96B02B022565535E0061331E /* ContextChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextChartView.swift; sourceTree = "<group>"; };
 		96B02BEC25752C800061331E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		96B02C11257660A70061331E /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		96B02C16257660C70061331E /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		96B02C21257662AC0061331E /* SizeRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeRatio.swift; sourceTree = "<group>"; };
+		96DA383426D53F5B00EAB72B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A25254796F95F36D233BF318 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E339390615FA115983543685 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +252,8 @@
 				96B02BEC25752C800061331E /* CollectionViewController.swift */,
 				8435A07324EA688A00CA8047 /* HomeViewController.swift */,
 				84359FC824EA556800CA8047 /* Views */,
+				96DA383426D53F5B00EAB72B /* TestViewController.swift */,
+				96221BD626D5412D0032C11C /* StatisticsCredit.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -610,7 +616,9 @@
 				8435A08024EA8AFB00CA8047 /* MapView.swift in Sources */,
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
 				96B02B032565535E0061331E /* ContextChartView.swift in Sources */,
+				96DA383526D53F5B00EAB72B /* TestViewController.swift in Sources */,
 				84620C3B2563713F00695261 /* OtherViewController.swift in Sources */,
+				96221BD726D5412D0032C11C /* StatisticsCredit.swift in Sources */,
 				960CA9E624B74A3300BBF45E /* MyTableViewController.swift in Sources */,
 				8435A07E24EA850D00CA8047 /* CircleImage.swift in Sources */,
 				84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */,

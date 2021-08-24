@@ -1,20 +1,24 @@
 PODS:
   - Kingfisher (4.10.1)
+  - RxSwift (5.1.2)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - Kingfisher
+  - RxSwift
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 611a1a425716ba7b595f8856624452b9112bd369
+PODFILE CHECKSUM: 520c0121c9d506b53281c1fc106103faa6fa1cba
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
