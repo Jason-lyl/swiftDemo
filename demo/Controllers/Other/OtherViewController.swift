@@ -20,8 +20,8 @@ class OtherViewController: UIViewController {
         self.view.backgroundColor = .white
         let with = self.view.frame.width
         
-        let view = ContextChartView.init(frame: CGRect(x: 0, y: 100, width: with, height: with))
-        self.view.addSubview(view)
+        let chartView = ContextChartView.init(frame: CGRect(x: 0, y: 100, width: with, height: with))
+        view.addSubview(chartView)
         
 //        let view2 = PathChartView.init(frame: CGRect(x: 0, y: 400, width: with, height: with))
 //        self.view.addSubview(view2)
@@ -29,18 +29,19 @@ class OtherViewController: UIViewController {
         
 //        let view1 = HeaderCircleView.init(frame: CGRect(x: 0, y: 300, width: with, height: with))
 //        view.addSubview(view1)
-        // Do any additional setup after loading the view.
+        let button = UIButton()
+        button.frame = CGRect(x: 100, y: 500, width: 150, height: 100)
+        button.backgroundColor = .red
+        button.setTitle("绘图", for: .normal)
+        button.addTarget(self, action: #selector(drawActions), for: .touchUpInside)
+        view.addSubview(button)
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension OtherViewController {
+    @objc func drawActions() {
+        let vc = DrawMainViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
-    */
-
 }
