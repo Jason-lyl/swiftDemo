@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -73,6 +73,7 @@
 		960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */; };
 		960CA9EE24B74B7100BBF45E /* MyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */; };
 		96221BD726D5412D0032C11C /* StatisticsCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96221BD626D5412D0032C11C /* StatisticsCredit.swift */; };
+		9678153B2732CF2B000EC550 /* PhotosKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9678153A2732CF2B000EC550 /* PhotosKit */; };
 		96B02A15256409B60061331E /* RecommandHeaderCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */; };
 		96B02B032565535E0061331E /* ContextChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02B022565535E0061331E /* ContextChartView.swift */; };
 		96B02BED25752C800061331E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02BEC25752C800061331E /* CollectionViewController.swift */; };
@@ -178,6 +179,7 @@
 		960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeaderView.swift; sourceTree = "<group>"; };
 		960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyHeaderView.xib; sourceTree = "<group>"; };
 		96221BD626D5412D0032C11C /* StatisticsCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCredit.swift; sourceTree = "<group>"; };
+		9678153F2732D234000EC550 /* PhotosKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PhotosKit; path = ../../PhotosKit; sourceTree = "<group>"; };
 		96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandHeaderCircleView.swift; sourceTree = "<group>"; };
 		96B02B022565535E0061331E /* ContextChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextChartView.swift; sourceTree = "<group>"; };
 		96B02BEC25752C800061331E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9678153B2732CF2B000EC550 /* PhotosKit in Frameworks */,
 				0507BB109D6952A5D2B56055 /* Pods_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +355,7 @@
 		84BDF1692499A44A005F4D3D = {
 			isa = PBXGroup;
 			children = (
+				9678153F2732D234000EC550 /* PhotosKit */,
 				84BDF1742499A44A005F4D3D /* demo */,
 				84BDF18B2499A44C005F4D3D /* demoTests */,
 				84BDF1962499A44C005F4D3D /* demoUITests */,
@@ -466,6 +470,9 @@
 			dependencies = (
 			);
 			name = demo;
+			packageProductDependencies = (
+				9678153A2732CF2B000EC550 /* PhotosKit */,
+			);
 			productName = demo;
 			productReference = 84BDF1722499A44A005F4D3D /* demo.app */;
 			productType = "com.apple.product-type.application";
@@ -539,6 +546,9 @@
 				Base,
 			);
 			mainGroup = 84BDF1692499A44A005F4D3D;
+			packageReferences = (
+				967815392732CF2B000EC550 /* XCRemoteSwiftPackageReference "PhotosKit" */,
+			);
 			productRefGroup = 84BDF1732499A44A005F4D3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1009,6 +1019,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		967815392732CF2B000EC550 /* XCRemoteSwiftPackageReference "PhotosKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Jason-lyl/PhotosKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9678153A2732CF2B000EC550 /* PhotosKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 967815392732CF2B000EC550 /* XCRemoteSwiftPackageReference "PhotosKit" */;
+			productName = PhotosKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84BDF16A2499A44A005F4D3D /* Project object */;
 }

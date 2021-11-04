@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import PhotosKit
 
 
 class HomeViewController: UIViewController {
@@ -62,7 +63,14 @@ class HomeViewController: UIViewController {
     }
     
     @objc func imageViewClick() {
-        self.navigationController?.pushViewController(GradientLayerViewController(), animated: true)
+        var item = PhotosManagerItem(4)
+        item.mediaType = .all
+        item.previousMediaType = .image
+        let vc = PhotoViewController(delegate: self, item: item)
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    
+//        self.navigationController?.pushViewController(GradientLayerViewController(), animated: true)
     }
     
     @objc func buttonClick() {
@@ -157,5 +165,13 @@ extension Double {
         return str
         
     }
+}
+
+extension HomeViewController: PhotoViewControllerDelegate {
+    func didFinishSelectPhotos(_ photos: [UIImage]) {
+        
+    }
+    
+    
 }
 
