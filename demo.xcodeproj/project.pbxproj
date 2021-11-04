@@ -179,7 +179,6 @@
 		960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeaderView.swift; sourceTree = "<group>"; };
 		960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyHeaderView.xib; sourceTree = "<group>"; };
 		96221BD626D5412D0032C11C /* StatisticsCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCredit.swift; sourceTree = "<group>"; };
-		9678153F2732D234000EC550 /* PhotosKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PhotosKit; path = ../../PhotosKit; sourceTree = "<group>"; };
 		96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandHeaderCircleView.swift; sourceTree = "<group>"; };
 		96B02B022565535E0061331E /* ContextChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextChartView.swift; sourceTree = "<group>"; };
 		96B02BEC25752C800061331E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -355,7 +354,6 @@
 		84BDF1692499A44A005F4D3D = {
 			isa = PBXGroup;
 			children = (
-				9678153F2732D234000EC550 /* PhotosKit */,
 				84BDF1742499A44A005F4D3D /* demo */,
 				84BDF18B2499A44C005F4D3D /* demoTests */,
 				84BDF1962499A44C005F4D3D /* demoUITests */,
