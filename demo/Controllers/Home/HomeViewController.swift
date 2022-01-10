@@ -22,7 +22,11 @@ class HomeViewController: UIViewController {
         navigationItem.title = "demo"
         // Do any additional setup after loading the view.
         setUpViews1()
-        
+        let arr = ["1", "2", "3"]
+        let arr1: [String] = []
+        print([arr, arr1].flatMap{ $0 })
+        print([arr, arr1].compactMap{ $0 })
+        print([arr, arr1].filter { $0.count > 0 })
     }
     
     
@@ -166,6 +170,7 @@ extension Double {
         
     }
 }
+<<<<<<< HEAD
 
 extension HomeViewController: PhotoViewControllerDelegate {
     func didFinishSelectPhotos(_ photos: [UIImage]) {
@@ -175,3 +180,5 @@ extension HomeViewController: PhotoViewControllerDelegate {
     
 }
 
+=======
+>>>>>>> c212072 (测试)

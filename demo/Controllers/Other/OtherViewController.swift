@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import MediaPlayer
 
 class OtherViewController: UIViewController {
     
@@ -41,6 +43,8 @@ class OtherViewController: UIViewController {
 
 extension OtherViewController {
     @objc func drawActions() {
+        let path = Bundle.main.path(forResource: "291140319fio", ofType: "mp4")
+
         let vc = DrawMainViewController()
         navigationController?.pushViewController(vc, animated: true)
     }

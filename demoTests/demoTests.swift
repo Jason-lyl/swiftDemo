@@ -20,8 +20,40 @@ class demoTests: XCTestCase {
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let createdAt = "2021-08-19T08:11:39.763Z"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+        var currentDate = dateFormatter.date(from: createdAt)
+        
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        var dates: String = ""
+        if let currentTime: Date = currentDate {
+            dates = outputFormatter.string(from: currentTime)
+        }
+        print("111\(dates)")
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        currentDate = dateFormatter.date(from: createdAt)
+        
+        if currentDate == nil {
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS+08:00"
+            currentDate = dateFormatter.date(from: createdAt)
+        }
+
+        if currentDate == nil {
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            currentDate = dateFormatter.date(from: createdAt)
+        }
+        
+        outputFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        if let currentTime: Date = currentDate {
+            dates = outputFormatter.string(from: currentTime)
+        }
+        print("222\(dates)")
+
     }
 
     func testPerformanceExample() {

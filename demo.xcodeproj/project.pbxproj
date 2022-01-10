@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0507BB109D6952A5D2B56055 /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25254796F95F36D233BF318 /* Pods_demo.framework */; };
+		8405496D2718252600F34AF8 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405495E2718252600F34AF8 /* AlertViewController.xib */; };
+		8405496E2718252600F34AF8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405495F2718252600F34AF8 /* AlertViewController.swift */; };
+		840549702718252600F34AF8 /* AlertPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549622718252600F34AF8 /* AlertPresentAnimator.swift */; };
+		840549712718252600F34AF8 /* AlertDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549632718252600F34AF8 /* AlertDismissAnimator.swift */; };
+		840549722718252600F34AF8 /* AlertTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549642718252600F34AF8 /* AlertTransition.swift */; };
+		840549732718252600F34AF8 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549652718252600F34AF8 /* AlertPresentationController.swift */; };
+		840549742718252600F34AF8 /* SheetPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549672718252600F34AF8 /* SheetPresentAnimator.swift */; };
+		840549752718252600F34AF8 /* SheetDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549682718252600F34AF8 /* SheetDismissAnimator.swift */; };
+		840549762718252600F34AF8 /* SheetTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549692718252600F34AF8 /* SheetTransition.swift */; };
+		840549772718252600F34AF8 /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405496A2718252600F34AF8 /* SheetPresentationController.swift */; };
+		840549792718348700F34AF8 /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840549782718348700F34AF8 /* AlertButton.swift */; };
+		8405498F2719478F00F34AF8 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405498E2719478F00F34AF8 /* AlertConfiguration.swift */; };
 		840E903A24DD4AE600721D3B /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E903824DD4AE600721D3B /* SliderViewController.swift */; };
 		840E903B24DD4AE600721D3B /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E903924DD4AE600721D3B /* SliderViewController.xib */; };
 		842DE15F249AF4680068F00D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DE15E249AF4680068F00D /* ProgressView.swift */; };
@@ -49,6 +61,8 @@
 		84620C492563966900695261 /* HeaderCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620C482563966900695261 /* HeaderCircleView.swift */; };
 		84620DDF2568D18700695261 /* PathChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84620DDE2568D18700695261 /* PathChartView.swift */; };
 		84669B6F257A163800219E66 /* NibProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84669B6E257A163800219E66 /* NibProtocol.swift */; };
+		846BFEBE274494C0001E9E90 /* Protocol+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BFEBD274494C0001E9E90 /* Protocol+Test.swift */; };
+		846BFED227461D7B001E9E90 /* 291140319fio.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 846BFED127461D7B001E9E90 /* 291140319fio.mp4 */; };
 		8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */; };
 		8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */; };
 		8493E68424E25ECE003A5913 /* TimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */; };
@@ -108,6 +122,18 @@
 
 /* Begin PBXFileReference section */
 		674BEC80F3660DD1C015A88F /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		8405495E2718252600F34AF8 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		8405495F2718252600F34AF8 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		840549622718252600F34AF8 /* AlertPresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentAnimator.swift; sourceTree = "<group>"; };
+		840549632718252600F34AF8 /* AlertDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDismissAnimator.swift; sourceTree = "<group>"; };
+		840549642718252600F34AF8 /* AlertTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTransition.swift; sourceTree = "<group>"; };
+		840549652718252600F34AF8 /* AlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
+		840549672718252600F34AF8 /* SheetPresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentAnimator.swift; sourceTree = "<group>"; };
+		840549682718252600F34AF8 /* SheetDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetDismissAnimator.swift; sourceTree = "<group>"; };
+		840549692718252600F34AF8 /* SheetTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetTransition.swift; sourceTree = "<group>"; };
+		8405496A2718252600F34AF8 /* SheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
+		840549782718348700F34AF8 /* AlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
+		8405498E2719478F00F34AF8 /* AlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
 		840E903824DD4AE600721D3B /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		840E903924DD4AE600721D3B /* SliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
 		842DE15E249AF4680068F00D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -149,6 +175,8 @@
 		84620C482563966900695261 /* HeaderCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCircleView.swift; sourceTree = "<group>"; };
 		84620DDE2568D18700695261 /* PathChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathChartView.swift; sourceTree = "<group>"; };
 		84669B6E257A163800219E66 /* NibProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibProtocol.swift; sourceTree = "<group>"; };
+		846BFEBD274494C0001E9E90 /* Protocol+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Test.swift"; sourceTree = "<group>"; };
+		846BFED127461D7B001E9E90 /* 291140319fio.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 291140319fio.mp4; sourceTree = "<group>"; };
 		8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewController.swift; sourceTree = "<group>"; };
 		8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerTableViewCell.xib; sourceTree = "<group>"; };
@@ -225,6 +253,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8405495B2718252600F34AF8 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				840549662718252600F34AF8 /* SheetTransition */,
+				840549612718252600F34AF8 /* AlertTransition */,
+				8405495F2718252600F34AF8 /* AlertViewController.swift */,
+				8405495E2718252600F34AF8 /* AlertViewController.xib */,
+				840549782718348700F34AF8 /* AlertButton.swift */,
+				8405498E2719478F00F34AF8 /* AlertConfiguration.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		840549612718252600F34AF8 /* AlertTransition */ = {
+			isa = PBXGroup;
+			children = (
+				840549642718252600F34AF8 /* AlertTransition.swift */,
+				840549622718252600F34AF8 /* AlertPresentAnimator.swift */,
+				840549632718252600F34AF8 /* AlertDismissAnimator.swift */,
+				840549652718252600F34AF8 /* AlertPresentationController.swift */,
+			);
+			path = AlertTransition;
+			sourceTree = "<group>";
+		};
+		840549662718252600F34AF8 /* SheetTransition */ = {
+			isa = PBXGroup;
+			children = (
+				840549692718252600F34AF8 /* SheetTransition.swift */,
+				840549672718252600F34AF8 /* SheetPresentAnimator.swift */,
+				840549682718252600F34AF8 /* SheetDismissAnimator.swift */,
+				8405496A2718252600F34AF8 /* SheetPresentationController.swift */,
+			);
+			path = SheetTransition;
+			sourceTree = "<group>";
+		};
 		84359FC824EA556800CA8047 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +341,7 @@
 		8435A07224EA687400CA8047 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8405495B2718252600F34AF8 /* Alert */,
 				96B02C00257660210061331E /* amation */,
 				96B02BEC25752C800061331E /* CollectionViewController.swift */,
 				8435A07324EA688A00CA8047 /* HomeViewController.swift */,
@@ -354,6 +418,7 @@
 		84620C3F256371CA00695261 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				846BFED127461D7B001E9E90 /* 291140319fio.mp4 */,
 				84620C3A2563713F00695261 /* OtherViewController.swift */,
 				84620C43256371FC00695261 /* RecommandCircleView.swift */,
 				84620C482563966900695261 /* HeaderCircleView.swift */,
@@ -361,6 +426,7 @@
 				96B02B022565535E0061331E /* ContextChartView.swift */,
 				84620DDE2568D18700695261 /* PathChartView.swift */,
 				84C2410E261ED52600F9173B /* ExcelView */,
+				846BFEBD274494C0001E9E90 /* Protocol+Test.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -587,6 +653,8 @@
 				8435A0A324EBACFB00CA8047 /* silversalmoncreek.jpg in Resources */,
 				8435A0A224EBACFB00CA8047 /* umbagog.jpg in Resources */,
 				84C24103261EC71600F9173B /* ExcelView.xib in Resources */,
+				846BFED227461D7B001E9E90 /* 291140319fio.mp4 in Resources */,
+				8405496D2718252600F34AF8 /* AlertViewController.xib in Resources */,
 				84C2410A261ECF1700F9173B /* ExcelViewCell.xib in Resources */,
 				96B02BF425752CA00061331E /* CollectionViewCell.xib in Resources */,
 				8435A09924EBACFB00CA8047 /* turtlerock.jpg in Resources */,
@@ -671,7 +739,9 @@
 				8435A07024EA66CF00CA8047 /* TabBarViewController.swift in Sources */,
 				84432BFD24D7EE4800347394 /* MyCollectionViewCell.swift in Sources */,
 				96B02BF325752CA00061331E /* CollectionViewCell.swift in Sources */,
+				840549792718348700F34AF8 /* AlertButton.swift in Sources */,
 				84BE0AFB25876CB600E01367 /* GradientLayerViewController.swift in Sources */,
+				840549712718252600F34AF8 /* AlertDismissAnimator.swift in Sources */,
 				96B02C17257660C70061331E /* TransitionManager.swift in Sources */,
 				84D8F0EF2585C02E009F3F3B /* GestureDrivenInteractiveTransition.swift in Sources */,
 				8435A07A24EA6DB800CA8047 /* SwiftUIView.swift in Sources */,
@@ -687,6 +757,7 @@
 				960CA9E924B74A9500BBF45E /* MyTableViewCell.swift in Sources */,
 				96B02B032565535E0061331E /* ContextChartView.swift in Sources */,
 				96DA383526D53F5B00EAB72B /* TestViewController.swift in Sources */,
+				840549732718252600F34AF8 /* AlertPresentationController.swift in Sources */,
 				84C240FE261EC70800F9173B /* ExcelView.swift in Sources */,
 				84620C3B2563713F00695261 /* OtherViewController.swift in Sources */,
 				96221BD726D5412D0032C11C /* StatisticsCredit.swift in Sources */,
@@ -694,8 +765,11 @@
 				845346132584F8EC00DB19EB /* SecondViewController.swift in Sources */,
 				8435A07E24EA850D00CA8047 /* CircleImage.swift in Sources */,
 				84BDF1762499A44A005F4D3D /* AppDelegate.swift in Sources */,
+				8405498F2719478F00F34AF8 /* AlertConfiguration.swift in Sources */,
 				96B02A15256409B60061331E /* RecommandHeaderCircleView.swift in Sources */,
+				8405496E2718252600F34AF8 /* AlertViewController.swift in Sources */,
 				96B02C22257662AC0061331E /* SizeRatio.swift in Sources */,
+				846BFEBE274494C0001E9E90 /* Protocol+Test.swift in Sources */,
 				8435A08224EB793200CA8047 /* ContentView.swift in Sources */,
 				8435A06E24EA66A400CA8047 /* NavigationController.swift in Sources */,
 				842DE15F249AF4680068F00D /* ProgressView.swift in Sources */,
@@ -703,9 +777,13 @@
 				84C24113261ED58600F9173B /* ExcelSectionView.swift in Sources */,
 				96B02BED25752C800061331E /* CollectionViewController.swift in Sources */,
 				8435A08624EB9E7B00CA8047 /* Landmark.swift in Sources */,
+				840549752718252600F34AF8 /* SheetDismissAnimator.swift in Sources */,
 				84620C44256371FC00695261 /* RecommandCircleView.swift in Sources */,
+				840549722718252600F34AF8 /* AlertTransition.swift in Sources */,
 				96B02BFC257530D00061331E /* SKDiffusionTransition.swift in Sources */,
+				840549742718252600F34AF8 /* SheetPresentAnimator.swift in Sources */,
 				8435A07724EA68B200CA8047 /* SwiftUIViewController.swift in Sources */,
+				840549772718252600F34AF8 /* SheetPresentationController.swift in Sources */,
 				84C24109261ECF1700F9173B /* ExcelViewCell.swift in Sources */,
 				8450C33626CDF8F6008B83CB /* DrawGraphicsViewController.swift in Sources */,
 				84C2411E261EE3B800F9173B /* ExcelColumnCell.swift in Sources */,
@@ -714,6 +792,8 @@
 				8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */,
 				8450C33426CDEEFA008B83CB /* DrawMainViewController.swift in Sources */,
 				842DE9DF24A98B390068F00D /* OneKeyLayerView.swift in Sources */,
+				840549702718252600F34AF8 /* AlertPresentAnimator.swift in Sources */,
+				840549762718252600F34AF8 /* SheetTransition.swift in Sources */,
 				96B02C0A257660770061331E /* DismissAnimator.swift in Sources */,
 				8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */,
 				960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */,

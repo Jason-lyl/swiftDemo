@@ -25,7 +25,11 @@
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>用于保存图片到相册</string>
     <key>NSPhotoLibraryUsageDescription</key>
+<<<<<<< HEAD
     <string>用于选取照片设置头像，上传发布照片</string>
+=======
+    <string>用于头像修改、社区图文发布、问题反馈。</string>
+>>>>>>> c212072 (测试)
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

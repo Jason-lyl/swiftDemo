@@ -69,6 +69,13 @@ class CollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0,1:
+            push(indexPath: indexPath)
+        default:
+            pushs(indexPath: indexPath)
+        }
+        return
         
         let height = kScreenWidth / 2 * 3
 
@@ -84,6 +91,75 @@ class CollectionViewController: UICollectionViewController {
         vc.data = dataSource[indexPath.row]
         self.present(vc, animated: true, completion: nil)
 
+    }
+    
+    func push(indexPath: IndexPath) {
+        //        UIAlertAction
+        //        UIAlertViewStyle
+        var style: UIAlertController.Style = .alert
+        switch indexPath.row {
+        case 0:
+            style = .alert
+        default:
+            style = .actionSheet
+        }
+
+        let vc = UIAlertController.init(title: "titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle", message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: style)
+        let cance = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
+        let sure = UIAlertAction.init(title: "设置", style: .default, handler: nil)
+        let other = UIAlertAction.init(title: "其他", style: .destructive, handler: nil)
+        vc.addAction(cance)
+        vc.addAction(sure)
+//        vc.addAction(other)
+        present(vc, animated: true, completion: nil)
+
+    }
+    
+    func pushs(indexPath: IndexPath) {
+        var title: String = ""
+        var message: String = ""
+        var vc: AlertViewController
+
+        switch indexPath.row {
+        case 2:
+            title = "标题"
+            message = "描述"
+            vc = AlertViewController.init(title: title, message: message, preferredStyle: .alert)
+        case 3:
+            title = "标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+            message = "描述"
+            vc = AlertViewController.init(title: title, message: message, preferredStyle: .alert)
+        case 4:
+            title = "标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+            message = "描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述"
+            vc = AlertViewController.init(title: title, message: message, preferredStyle: .actionSheet)
+        case 5:
+            title = ""
+            message = "描述"
+            vc = AlertViewController.init(title: title, message: message, preferredStyle: .alert)
+        default:
+            let message1 = NSMutableAttributedString.init(string: "免费使用\n", attributes: [
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                    NSAttributedString.Key.foregroundColor: UIColor(hex: 0x333333)])
+            let count1 = NSAttributedString.init(string: "\(10)", attributes: [
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                    NSAttributedString.Key.foregroundColor: UIColor(hex: 0xE9302D)])
+            message1.append(count1)
+            let message2 = NSAttributedString.init(string: "次，", attributes: [
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                    NSAttributedString.Key.foregroundColor: UIColor(hex: 0x333333)])
+            message1.append(message2)
+            let vipMessage = NSAttributedString.init(string: "开通VIP无限使用", attributes: [
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                    NSAttributedString.Key.foregroundColor: UIColor(hex: 0xE9302D)])
+            message1.append(vipMessage)
+            vc = AlertViewController.init(customMessage: message1, preferredStyle: .alert)
+        }
+        let canse = AlertAction.init(title: "取消", style: .cancel, handler: nil)
+        let sure = AlertAction.init(title: "确定", style: .default, handler: nil)
+        vc.addAction(canse)
+        vc.addAction(sure)
+        present(vc, animated: true, completion: nil)
     }
     
 }
