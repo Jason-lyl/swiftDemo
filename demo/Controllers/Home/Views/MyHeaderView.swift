@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ButtonDelegate: class {
+protocol ButtonDelegate: AnyObject {
     func viewClick(indexPath: Int)
 }
 
@@ -67,7 +67,7 @@ extension UITableView {
 }
 
 /// Cell快速注册，获取协议
-protocol CellReusable: class {
+protocol CellReusable: AnyObject {
     static var reuseableIdentifier: String {get}
     static var nib: UINib? {get}
 }

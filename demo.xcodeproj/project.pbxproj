@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,6 +63,12 @@
 		84669B6F257A163800219E66 /* NibProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84669B6E257A163800219E66 /* NibProtocol.swift */; };
 		846BFEBE274494C0001E9E90 /* Protocol+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BFEBD274494C0001E9E90 /* Protocol+Test.swift */; };
 		846BFED227461D7B001E9E90 /* 291140319fio.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 846BFED127461D7B001E9E90 /* 291140319fio.mp4 */; };
+		846C094D2795670800629975 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C094C2795670800629975 /* AudioViewController.swift */; };
+		8476E42C279AB912004A903C /* DemandBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E427279AB912004A903C /* DemandBuffer.swift */; };
+		8476E42D279AB912004A903C /* UnconfiguredExternalAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E428279AB912004A903C /* UnconfiguredExternalAccessory.swift */; };
+		8476E42E279AB912004A903C /* UnconfiguredExternalAccessoryBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E429279AB912004A903C /* UnconfiguredExternalAccessoryBrowser.swift */; };
+		8476E42F279AB912004A903C /* BrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E42A279AB912004A903C /* BrowserDelegate.swift */; };
+		8476E430279AB912004A903C /* SimpleSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E42B279AB912004A903C /* SimpleSubscription.swift */; };
 		8493E68024E24BE8003A5913 /* TimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */; };
 		8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */; };
 		8493E68424E25ECE003A5913 /* TimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */; };
@@ -89,7 +95,6 @@
 		960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CA9EB24B74B5C00BBF45E /* MyHeaderView.swift */; };
 		960CA9EE24B74B7100BBF45E /* MyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960CA9ED24B74B7100BBF45E /* MyHeaderView.xib */; };
 		96221BD726D5412D0032C11C /* StatisticsCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96221BD626D5412D0032C11C /* StatisticsCredit.swift */; };
-		9678153B2732CF2B000EC550 /* PhotosKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9678153A2732CF2B000EC550 /* PhotosKit */; };
 		96B02A15256409B60061331E /* RecommandHeaderCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02A14256409B60061331E /* RecommandHeaderCircleView.swift */; };
 		96B02B032565535E0061331E /* ContextChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02B022565535E0061331E /* ContextChartView.swift */; };
 		96B02BED25752C800061331E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B02BEC25752C800061331E /* CollectionViewController.swift */; };
@@ -177,6 +182,12 @@
 		84669B6E257A163800219E66 /* NibProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibProtocol.swift; sourceTree = "<group>"; };
 		846BFEBD274494C0001E9E90 /* Protocol+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Test.swift"; sourceTree = "<group>"; };
 		846BFED127461D7B001E9E90 /* 291140319fio.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 291140319fio.mp4; sourceTree = "<group>"; };
+		846C094C2795670800629975 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		8476E427279AB912004A903C /* DemandBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemandBuffer.swift; sourceTree = "<group>"; };
+		8476E428279AB912004A903C /* UnconfiguredExternalAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnconfiguredExternalAccessory.swift; sourceTree = "<group>"; };
+		8476E429279AB912004A903C /* UnconfiguredExternalAccessoryBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnconfiguredExternalAccessoryBrowser.swift; sourceTree = "<group>"; };
+		8476E42A279AB912004A903C /* BrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserDelegate.swift; sourceTree = "<group>"; };
+		8476E42B279AB912004A903C /* SimpleSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSubscription.swift; sourceTree = "<group>"; };
 		8493E67F24E24BE8003A5913 /* TimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewController.swift; sourceTree = "<group>"; };
 		8493E68124E25ECE003A5913 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		8493E68224E25ECE003A5913 /* TimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerTableViewCell.xib; sourceTree = "<group>"; };
@@ -231,7 +242,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9678153B2732CF2B000EC550 /* PhotosKit in Frameworks */,
 				0507BB109D6952A5D2B56055 /* Pods_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +428,11 @@
 		84620C3F256371CA00695261 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				8476E42A279AB912004A903C /* BrowserDelegate.swift */,
+				8476E427279AB912004A903C /* DemandBuffer.swift */,
+				8476E42B279AB912004A903C /* SimpleSubscription.swift */,
+				8476E428279AB912004A903C /* UnconfiguredExternalAccessory.swift */,
+				8476E429279AB912004A903C /* UnconfiguredExternalAccessoryBrowser.swift */,
 				846BFED127461D7B001E9E90 /* 291140319fio.mp4 */,
 				84620C3A2563713F00695261 /* OtherViewController.swift */,
 				84620C43256371FC00695261 /* RecommandCircleView.swift */,
@@ -526,6 +541,7 @@
 				96B02C16257660C70061331E /* TransitionManager.swift */,
 				96B02C21257662AC0061331E /* SizeRatio.swift */,
 				845346112584F8EC00DB19EB /* SecondViewController.swift */,
+				846C094C2795670800629975 /* AudioViewController.swift */,
 			);
 			path = amation;
 			sourceTree = "<group>";
@@ -549,7 +565,6 @@
 			);
 			name = demo;
 			packageProductDependencies = (
-				9678153A2732CF2B000EC550 /* PhotosKit */,
 			);
 			productName = demo;
 			productReference = 84BDF1722499A44A005F4D3D /* demo.app */;
@@ -625,7 +640,6 @@
 			);
 			mainGroup = 84BDF1692499A44A005F4D3D;
 			packageReferences = (
-				967815392732CF2B000EC550 /* XCRemoteSwiftPackageReference "PhotosKit" */,
 			);
 			productRefGroup = 84BDF1732499A44A005F4D3D /* Products */;
 			projectDirPath = "";
@@ -742,10 +756,13 @@
 				840549792718348700F34AF8 /* AlertButton.swift in Sources */,
 				84BE0AFB25876CB600E01367 /* GradientLayerViewController.swift in Sources */,
 				840549712718252600F34AF8 /* AlertDismissAnimator.swift in Sources */,
+				8476E42D279AB912004A903C /* UnconfiguredExternalAccessory.swift in Sources */,
+				8476E42E279AB912004A903C /* UnconfiguredExternalAccessoryBrowser.swift in Sources */,
 				96B02C17257660C70061331E /* TransitionManager.swift in Sources */,
 				84D8F0EF2585C02E009F3F3B /* GestureDrivenInteractiveTransition.swift in Sources */,
 				8435A07A24EA6DB800CA8047 /* SwiftUIView.swift in Sources */,
 				84432BFA24D7E74B00347394 /* ShadowViewController.swift in Sources */,
+				8476E42C279AB912004A903C /* DemandBuffer.swift in Sources */,
 				84669B6F257A163800219E66 /* NibProtocol.swift in Sources */,
 				8435A07424EA688A00CA8047 /* HomeViewController.swift in Sources */,
 				8435A07C24EA716400CA8047 /* landmarkRow.swift in Sources */,
@@ -773,6 +790,7 @@
 				8435A08224EB793200CA8047 /* ContentView.swift in Sources */,
 				8435A06E24EA66A400CA8047 /* NavigationController.swift in Sources */,
 				842DE15F249AF4680068F00D /* ProgressView.swift in Sources */,
+				846C094D2795670800629975 /* AudioViewController.swift in Sources */,
 				8493E68924E270AA003A5913 /* OtherTimerTableViewCell.m in Sources */,
 				84C24113261ED58600F9173B /* ExcelSectionView.swift in Sources */,
 				96B02BED25752C800061331E /* CollectionViewController.swift in Sources */,
@@ -796,9 +814,11 @@
 				840549762718252600F34AF8 /* SheetTransition.swift in Sources */,
 				96B02C0A257660770061331E /* DismissAnimator.swift in Sources */,
 				8493E68324E25ECE003A5913 /* TimerTableViewCell.swift in Sources */,
+				8476E430279AB912004A903C /* SimpleSubscription.swift in Sources */,
 				960CA9EC24B74B5C00BBF45E /* MyHeaderView.swift in Sources */,
 				84BDF1A62499A4FB005F4D3D /* ProbabilityHalfCircleView.swift in Sources */,
 				84620C492563966900695261 /* HeaderCircleView.swift in Sources */,
+				8476E42F279AB912004A903C /* BrowserDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,7 +982,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = youzy.demo11;
+				PRODUCT_BUNDLE_IDENTIFIER = youzy.demo01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -985,7 +1005,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = youzy.demo11;
+				PRODUCT_BUNDLE_IDENTIFIER = youzy.demo01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1113,25 +1133,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		967815392732CF2B000EC550 /* XCRemoteSwiftPackageReference "PhotosKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:Jason-lyl/PhotosKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9678153A2732CF2B000EC550 /* PhotosKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 967815392732CF2B000EC550 /* XCRemoteSwiftPackageReference "PhotosKit" */;
-			productName = PhotosKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84BDF16A2499A44A005F4D3D /* Project object */;
 }

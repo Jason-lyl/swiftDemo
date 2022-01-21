@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-protocol NibLoadable: class {
+protocol NibLoadable: AnyObject {
     func loadViewFromNib(name: String) -> UIView
     func initViewFromNib(name: String, enabled: Bool)
 }

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>com.apple.external-accessory.wireless-configuration</key>
+     <true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -25,11 +27,7 @@
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>用于保存图片到相册</string>
     <key>NSPhotoLibraryUsageDescription</key>
-<<<<<<< HEAD
     <string>用于选取照片设置头像，上传发布照片</string>
-=======
-    <string>用于头像修改、社区图文发布、问题反馈。</string>
->>>>>>> c212072 (测试)
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

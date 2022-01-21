@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import PhotosKit
 
 
 class HomeViewController: UIViewController {
@@ -67,22 +66,14 @@ class HomeViewController: UIViewController {
     }
     
     @objc func imageViewClick() {
-        var item = PhotosManagerItem(4)
-        item.mediaType = .all
-        item.previousMediaType = .image
-        let vc = PhotoViewController(delegate: self, item: item)
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(vc, animated: true, completion: nil)
-    
-//        self.navigationController?.pushViewController(GradientLayerViewController(), animated: true)
+        self.navigationController?.pushViewController(GradientLayerViewController(), animated: true)
     }
     
     @objc func buttonClick() {
-        //        oneKeyView?.starAnimation()
-        //        let vc = MyTableViewController.init(style: .plain
-        //        )
-        //        self.present(vc, animated: true, completion: nil)
-        jumpTimerVC()
+        oneKeyView?.starAnimation()
+        let vc = MyTableViewController.init(style: .plain
+        )
+        self.present(vc, animated: true, completion: nil)
     }
     
     func jumpTimerVC() {
@@ -170,15 +161,3 @@ extension Double {
         
     }
 }
-<<<<<<< HEAD
-
-extension HomeViewController: PhotoViewControllerDelegate {
-    func didFinishSelectPhotos(_ photos: [UIImage]) {
-        
-    }
-    
-    
-}
-
-=======
->>>>>>> c212072 (测试)
